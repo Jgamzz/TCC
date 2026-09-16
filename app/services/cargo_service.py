@@ -1,6 +1,7 @@
 from app import db
 from app.models.cargo import Cargo
 
+
 class CargoService:
     @staticmethod
     def listar_todos():
@@ -13,8 +14,8 @@ class CargoService:
     @staticmethod
     def criar_cargo(dados):
         novo_cargo = Cargo(
-            Name=dados['Name'],
-            Is_Active=dados.get('Is_Active', True)
+            name=dados["Name"],
+            is_active=dados.get("Is_Active", True),
         )
         db.session.add(novo_cargo)
         db.session.commit()
@@ -26,8 +27,8 @@ class CargoService:
         if not cargo:
             return None
 
-        cargo.Name = dados.get('Name', cargo.Name)
-        cargo.Is_Active = dados.get('Is_Active', cargo.Is_Active)
+        cargo.name = dados.get("Name", cargo.name)
+        cargo.is_active = dados.get("Is_Active", cargo.is_active)
 
         db.session.commit()
         return cargo

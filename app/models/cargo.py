@@ -1,21 +1,25 @@
-from app import db
 from datetime import datetime
 
-class Cargo(db.Model):
-    __tablename__ = 'Cargo'
+from app import db
 
-    ID = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    Name = db.Column(db.String(50), nullable=False)
-    Creation_Date = db.Column(db.DateTime, default=datetime.utcnow)
-    Is_Active = db.Column(db.Boolean, default=True)
+
+class Cargo(db.Model):
+    __tablename__ = "Cargo"
+
+    id = db.Column("ID", db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column("Name", db.String(50), nullable=False)
+    creation_date = db.Column("Creation_Date", db.DateTime, default=datetime.utcnow)
+    is_active = db.Column("Is_Active", db.Boolean, default=True)
 
     # Relacionamento de 1 para N com Usuario
-    usuarios = db.relationship('Usuario', backref='cargo', lazy=True)
+    usuarios = db.relationship("Usuario", backref="cargo", lazy=True)
 
     def to_dict(self):
         return {
-            'ID': self.ID,
-            'Name': self.Name,
-            'Creation_Date': self.Creation_Date.isoformat() if self.Creation_Date else None,
-            'Is_Active': self.Is_Active
+            "ID": self.id,
+            "Name": self.name,
+            "Creation_Date": (
+                self.creation_date.isoformat() if self.creation_date else None
+            ),
+            "Is_Active": self.is_active,
         }

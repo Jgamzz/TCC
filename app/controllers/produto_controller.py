@@ -1,186 +1,157 @@
 from flask import Blueprint, jsonify, request
-from app.services.produto_service import ProdutoService
+
+from app.dtos.produto_dto import ProdutoResponseDto
+from app.services.produto_app_service import ProdutoAppService
 from app.services.usuario_service import verificar_permissao
 
-produto_bp = Blueprint('produto_bp', __name__)
+produto_bp = Blueprint("produto_bp", __name__)
+produto_service = ProdutoAppService()
 
-# Cargo 1: Funcionário | Cargo 2: Gerente | Cargo 3: Dono
 
-@produto_bp.route('/', methods=['GET'])
-@verificar_permissao([1, 2, 3])  # Todos podem visualizar
+@produto_bp.get("/")
+@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
 def listar():
     """
-    Listar todos os produtos (Funcionário, Gerente e Dono)
+    Lista produtos.
     ---
-    tags:
-      - Produtos
-    parameters:
-      - name: X-User-ID
-        in: header
-        type: integer
-        required: true
-        description: ID do Usuário logado
+    tags: [Produtos]
+    security: [{Bearer: []}]
     responses:
       200:
-        description: Lista de produtos retornada com sucesso
-      403:
-        description: Permissão negada
+        description: Produtos encontrados
+      401:
+        description: Token ausente ou inválido
     """
-    produtos = ProdutoService.listar_todos()
-    return jsonify([p.to_dict() for p in produtos]), 200
+    return jsonify(
+        [
+            ProdutoResponseDto.from_model(produto).to_dict()
+            for produto in produto_service.listar()
+        ]
+    )
 
 
-@produto_bp.route('/<int:id_produto>', methods=['GET'])
-@verificar_permissao([1, 2, 3])  # Todos podem visualizar
+@produto_bp.get("/<int:id_produto>")
+@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
 def buscar_por_id(id_produto):
     """
-    Buscar produto por ID (Funcionário, Gerente e Dono)
+    Busca um produto pelo ID.
     ---
-    tags:
-      - Produtos
+    tags: [Produtos]
+    security: [{Bearer: []}]
     parameters:
-      - name: X-User-ID
-        in: header
-        type: integer
-        required: true
-        description: ID do Usuário logado
       - name: id_produto
         in: path
-        type: integer
         required: true
+        type: integer
     responses:
       200:
         description: Produto encontrado
       404:
         description: Produto não encontrado
     """
-    produto = ProdutoService.buscar_por_id(id_produto)
+    produto = produto_service.buscar(id_produto)
     if not produto:
         return jsonify({"erro": "Produto não encontrado"}), 404
-    return jsonify(produto.to_dict()), 200
+    return jsonify(ProdutoResponseDto.from_model(produto).to_dict())
 
 
-@produto_bp.route('/', methods=['POST'])
-@verificar_permissao([2, 3])  # Apenas Gerente e Dono
+@produto_bp.post("/")
+@verificar_permissao(["DONO"])
 def cadastrar():
     """
-    Cadastrar um novo produto (Apenas Gerente e Dono)
+    Cadastra um produto. Apenas o dono.
     ---
-    tags:
-      - Produtos
+    tags: [Produtos]
+    security: [{Bearer: []}]
+    consumes: [application/json]
     parameters:
-      - name: X-User-ID
-        in: header
-        type: integer
-        required: true
-        description: ID do Usuário logado
-      - name: body
-        in: body
+      - in: body
+        name: produto
         required: true
         schema:
           type: object
-          required:
-            - nome
-            - custo
-            - preco_atual
+          required: [nome, custo, preco_atual]
           properties:
-            nome:
-              type: string
-              example: "Arroz 5kg"
-            custo:
-              type: number
-              example: 18.50
-            preco_atual:
-              type: number
-              example: 25.00
-            estoque:
-              type: number
-              example: 50
+            nome: {type: string, example: Arroz 5kg}
+            custo: {type: number, example: 18.50}
+            preco_atual: {type: number, example: 25.00}
+            estoque: {type: number, example: 50}
+            data_validade: {type: string, format: date, example: '2026-12-31'}
     responses:
       201:
-        description: Produto criado com sucesso
+        description: Produto criado
       403:
-        description: Acesso proibido para o cargo atual
+        description: Permissão negada
     """
-    dados = request.get_json()
-    novo_produto = ProdutoService.criar_produto(dados)
-    return jsonify(novo_produto.to_dict()), 201
+    try:
+        produto = produto_service.criar(request.get_json(silent=True))
+        return jsonify(ProdutoResponseDto.from_model(produto).to_dict()), 201
+    except ValueError as erro:
+        return jsonify({"erro": str(erro)}), 400
 
 
-@produto_bp.route('/<int:id_produto>', methods=['PUT'])
-@verificar_permissao([2, 3])  # Apenas Gerente e Dono
+@produto_bp.put("/<int:id_produto>")
+@verificar_permissao(["GERENTE", "DONO"])
 def atualizar(id_produto):
     """
-    Atualizar um produto (Apenas Gerente e Dono)
+    Atualiza um produto. Gerente ou dono.
     ---
-    tags:
-      - Produtos
+    tags: [Produtos]
+    security: [{Bearer: []}]
     parameters:
-      - name: X-User-ID
-        in: header
-        type: integer
-        required: true
-        description: ID do Usuário logado
       - name: id_produto
         in: path
+        required: true
         type: integer
+      - in: body
+        name: produto
         required: true
-      - name: body
-        in: body
-        required: true
-        schema:
-          type: object
-          properties:
-            nome:
-              type: string
-              example: "Arroz 5kg Tipo 1"
-            custo:
-              type: number
-              example: 19.00
-            preco_atual:
-              type: number
-              example: 26.50
-            estoque:
-              type: number
-              example: 45
+        schema: {type: object}
     responses:
       200:
-        description: Produto atualizado com sucesso
-      403:
-        description: Acesso proibido para o cargo atual
+        description: Produto atualizado
+      404:
+        description: Produto não encontrado
     """
-    dados = request.get_json()
-    produto_atualizado = ProdutoService.atualizar_produto(id_produto, dados)
-    if not produto_atualizado:
+    try:
+        produto = produto_service.atualizar(id_produto, request.get_json(silent=True))
+    except ValueError as erro:
+        return jsonify({"erro": str(erro)}), 400
+    if not produto:
         return jsonify({"erro": "Produto não encontrado"}), 404
-    return jsonify(produto_atualizado.to_dict()), 200
+    return jsonify(ProdutoResponseDto.from_model(produto).to_dict())
 
 
-@produto_bp.route('/<int:id_produto>', methods=['DELETE'])
-@verificar_permissao([3])  # Apenas o Dono
+@produto_bp.delete("/<int:id_produto>")
+@verificar_permissao(["GERENTE", "DONO"])
 def deletar(id_produto):
     """
-    Deletar um produto (Apenas Dono)
+    Exclui um produto. Gerente ou dono.
     ---
-    tags:
-      - Produtos
+    tags: [Produtos]
+    security: [{Bearer: []}]
     parameters:
-      - name: X-User-ID
-        in: header
-        type: integer
-        required: true
-        description: ID do Usuário logado
       - name: id_produto
         in: path
-        type: integer
         required: true
+        type: integer
     responses:
       200:
-        description: Produto removido com sucesso
-      403:
-        description: Apenas o Dono pode excluir produtos
+        description: Produto removido
+      404:
+        description: Produto não encontrado
     """
-    sucesso = ProdutoService.deletar_produto(id_produto)
-    if not sucesso:
+    if not produto_service.excluir(id_produto):
         return jsonify({"erro": "Produto não encontrado"}), 404
-    return jsonify({"mensagem": f"Produto {id_produto} removido com sucesso"}), 200
+    return jsonify({"mensagem": "Produto removido com sucesso"})
+
+
+class ProdutoController:
+    """Controller HTTP responsável pelo gerenciamento de produtos."""
+
+    blueprint = produto_bp
+    listar = staticmethod(listar)
+    buscar_por_id = staticmethod(buscar_por_id)
+    cadastrar = staticmethod(cadastrar)
+    atualizar = staticmethod(atualizar)
+    deletar = staticmethod(deletar)

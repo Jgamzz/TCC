@@ -1,9 +1,12 @@
 from flask import Blueprint, jsonify, request
 from app.services.usuario_service import UsuarioService
+from app.services.usuario_service import verificar_permissao
 
-usuario_bp = Blueprint('usuario_bp', __name__)
+usuario_bp = Blueprint("usuario_bp", __name__)
 
-@usuario_bp.route('/', methods=['GET'])
+
+@usuario_bp.route("/", methods=["GET"])
+@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
 def listar():
     """
     Listar todos os usuários
@@ -18,7 +21,8 @@ def listar():
     return jsonify([u.to_dict() for u in usuarios]), 200
 
 
-@usuario_bp.route('/<int:id_usuario>', methods=['GET'])
+@usuario_bp.route("/<int:id_usuario>", methods=["GET"])
+@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
 def buscar_por_id(id_usuario):
     """
     Buscar usuário pelo ID
@@ -42,7 +46,8 @@ def buscar_por_id(id_usuario):
     return jsonify(usuario.to_dict()), 200
 
 
-@usuario_bp.route('/', methods=['POST'])
+@usuario_bp.route("/", methods=["POST"])
+@verificar_permissao(["DONO"])
 def cadastrar():
     """
     Cadastrar um novo usuário
@@ -91,7 +96,8 @@ def cadastrar():
         return jsonify({"erro": "Erro ao criar usuário"}), 500
 
 
-@usuario_bp.route('/<int:id_usuario>', methods=['PUT'])
+@usuario_bp.route("/<int:id_usuario>", methods=["PUT"])
+@verificar_permissao(["GERENTE", "DONO"])
 def atualizar(id_usuario):
     """
     Atualizar um usuário existente
@@ -140,7 +146,8 @@ def atualizar(id_usuario):
         return jsonify({"erro": str(ve)}), 400
 
 
-@usuario_bp.route('/<int:id_usuario>', methods=['DELETE'])
+@usuario_bp.route("/<int:id_usuario>", methods=["DELETE"])
+@verificar_permissao(["GERENTE", "DONO"])
 def deletar(id_usuario):
     """
     Remover um usuário pelo ID
@@ -162,3 +169,14 @@ def deletar(id_usuario):
     if not sucesso:
         return jsonify({"erro": "Usuário não encontrado"}), 404
     return jsonify({"mensagem": f"Usuário {id_usuario} removido com sucesso"}), 200
+
+
+class UsuarioController:
+    """Controller HTTP responsável pelo gerenciamento de usuários."""
+
+    blueprint = usuario_bp
+    listar = staticmethod(listar)
+    buscar_por_id = staticmethod(buscar_por_id)
+    cadastrar = staticmethod(cadastrar)
+    atualizar = staticmethod(atualizar)
+    deletar = staticmethod(deletar)

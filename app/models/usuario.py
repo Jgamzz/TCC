@@ -1,24 +1,33 @@
-from app import db
 from datetime import datetime
 
-class Usuario(db.Model):
-    __tablename__ = 'Usuario'
+from app import db
 
-    ID = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    Username = db.Column(db.String(50), nullable=False, unique=True)
-    Password = db.Column(db.String(50), nullable=False)
-    Name = db.Column(db.String(100), nullable=False)
-    Creation_Date = db.Column(db.DateTime, default=datetime.utcnow)
-    Is_Active = db.Column(db.Boolean, default=True)
-    Cargo_ID = db.Column(db.Integer, db.ForeignKey('Cargo.ID', ondelete='SET NULL'), nullable=True)
+
+class Usuario(db.Model):
+    __tablename__ = "Usuario"
+
+    id = db.Column("ID", db.Integer, primary_key=True, autoincrement=True)
+    username = db.Column("Username", db.String(50), nullable=False, unique=True)
+    password = db.Column("Password", db.String(50), nullable=False)
+    name = db.Column("Name", db.String(100), nullable=False)
+    creation_date = db.Column("Creation_Date", db.DateTime, default=datetime.utcnow)
+    is_active = db.Column("Is_Active", db.Boolean, default=True)
+    cargo_id = db.Column(
+        "Cargo_ID",
+        db.Integer,
+        db.ForeignKey("Cargo.ID", ondelete="SET NULL"),
+        nullable=True,
+    )
 
     def to_dict(self):
         return {
-            'ID': self.ID,
-            'Username': self.Username,
-            'Name': self.Name,
-            'Creation_Date': self.Creation_Date.isoformat() if self.Creation_Date else None,
-            'Is_Active': self.Is_Active,
-            'Cargo_ID': self.Cargo_ID,
-            'Cargo_Name': self.cargo.Name if self.cargo else None
+            "ID": self.id,
+            "Username": self.username,
+            "Name": self.name,
+            "Creation_Date": (
+                self.creation_date.isoformat() if self.creation_date else None
+            ),
+            "Is_Active": self.is_active,
+            "Cargo_ID": self.cargo_id,
+            "Cargo_Name": self.cargo.name if self.cargo else None,
         }
