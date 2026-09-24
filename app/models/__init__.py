@@ -5,3 +5,6 @@ from app.models.configuracao_regras import ConfiguracaoRegras
 from app.models.historico_preco import HistoricoPreco
 from app.models.cargo import Cargo
 from app.models.usuario import Usuario
+from app.models.log_sistema import LogSistema
+from app.models.sugestao_preco import SugestaoPreco
+from app.models.feedback_cliente import FeedbackCliente

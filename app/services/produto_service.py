@@ -1,6 +1,7 @@
 from app import db
 from app.models.produto import Produto
 
+
 class ProdutoService:
     @staticmethod
     def listar_todos():
@@ -13,11 +14,11 @@ class ProdutoService:
     @staticmethod
     def criar_produto(dados):
         novo_produto = Produto(
-            nome=dados['nome'],
-            custo=dados['custo'],
-            preco_atual=dados['preco_atual'],
-            estoque=dados.get('estoque', 0),
-            data_validade=dados.get('data_validade')
+            nome=dados["nome"],
+            custo=dados["custo"],
+            preco_atual=dados["preco_atual"],
+            estoque=dados.get("estoque", 0),
+            data_validade=dados.get("data_validade"),
         )
         db.session.add(novo_produto)
         db.session.commit()
@@ -30,11 +31,11 @@ class ProdutoService:
             return None
 
         # Atualiza os campos se eles forem informados no JSON
-        produto.nome = dados.get('nome', produto.nome)
-        produto.custo = dados.get('custo', produto.custo)
-        produto.preco_atual = dados.get('preco_atual', produto.preco_atual)
-        produto.estoque = dados.get('estoque', produto.estoque)
-        produto.data_validade = dados.get('data_validade', produto.data_validade)
+        produto.nome = dados.get("nome", produto.nome)
+        produto.custo = dados.get("custo", produto.custo)
+        produto.preco_atual = dados.get("preco_atual", produto.preco_atual)
+        produto.estoque = dados.get("estoque", produto.estoque)
+        produto.data_validade = dados.get("data_validade", produto.data_validade)
 
         db.session.commit()
         return produto
