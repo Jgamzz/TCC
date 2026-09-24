@@ -1,0 +1,6 @@
+Flask
+Flask-SQLAlchemy
+alembic
+flasgger
+PyMySQL
+Flask-JWT-Extended
