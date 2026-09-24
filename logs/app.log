@@ -1,0 +1,1599 @@
+2026-09-15 09:01:11 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 09:01:11 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 09:01:11 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 09:01:14 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 09:01:14 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 09:04:41 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:04:41] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 09:04:41 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:04:41] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 09:04:41 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:04:41] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 09:04:41 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:04:41] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 09:04:41 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:04:41] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 09:04:42 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:04:42] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 09:07:11 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\models\\usuario.py', reloading
+2026-09-15 09:07:12 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 09:07:31 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 09:07:31 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 09:07:41 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-09-15 09:07:43 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 09:07:47 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 09:07:47 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 09:08:43 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\config.py', reloading
+2026-09-15 09:08:44 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 09:08:49 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 09:08:49 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 09:09:36 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 09:09:36 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 09:09:36 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 09:09:40 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 09:09:40 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 09:09:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:54] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 09:09:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:54] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 09:09:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:54] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 09:09:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:54] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 09:09:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:54] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 09:09:55 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:55] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 09:09:55 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:09:55] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 09:10:17 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:10:17] "GET /api/cargos/ HTTP/1.1" 200 -
+2026-09-15 09:11:14 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:11:14] "POST /api/feedbacks HTTP/1.1" 401 -
+2026-09-15 09:33:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:33:20] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-15 09:33:44 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Data too long for column 'Password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\auth_controller.py", line 40, in login
+    usuario = UsuarioService.autenticar(dados.get("Username"), dados.get("Password"))
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 78, in autenticar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 86, in save_obj
+    _emit_update_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        update,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 913, in _emit_update_statements
+    c = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'Password' at row 1")
+[SQL: UPDATE `Usuario` SET `Password`=%(Password)s WHERE `Usuario`.`ID` = %(Usuario_ID)s]
+[parameters: {'Password': 'scrypt:32768:8:1$tdSOIV9RRJPkVkkX$825b314a3657e85d7c601c95e74ea032b76e0617b57c6413010296d11775fb2fdfc13478d1bcfc0fdbef8f8367fbdc3ed8a1a7e5ba409186cb0b8878f934f445', 'Usuario_ID': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-09-15 09:33:44 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:33:44] "POST /api/auth/login HTTP/1.1" 500 -
+2026-09-15 09:53:03 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:53:03] "GET /api/cargos/ HTTP/1.1" 200 -
+2026-09-15 09:59:15 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 09:59:15 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 09:59:15 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 09:59:18 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 09:59:18 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 09:59:31 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:31] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 09:59:31 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:31] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 09:59:31 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:31] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 09:59:31 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:31] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 09:59:31 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:31] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 09:59:32 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:32] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 09:59:32 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:32] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 09:59:39 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:39] "GET /api/cargos/ HTTP/1.1" 200 -
+2026-09-15 09:59:55 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 09:59:55] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-15 10:00:06 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Data too long for column 'Password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\auth_controller.py", line 40, in login
+    usuario = UsuarioService.autenticar(dados.get("Username"), dados.get("Password"))
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 78, in autenticar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 86, in save_obj
+    _emit_update_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        update,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 913, in _emit_update_statements
+    c = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'Password' at row 1")
+[SQL: UPDATE `Usuario` SET `Password`=%(Password)s WHERE `Usuario`.`ID` = %(Usuario_ID)s]
+[parameters: {'Password': 'scrypt:32768:8:1$ww4A2jwHJeqRs9wC$9b34a546f023a15df774419882cf5e66e28e4666b39059c00e1ca8deadcbcbb15542aaa9a7f84513be733f7c6961daac39f0080357698011df4cd9b05663f88c', 'Usuario_ID': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-09-15 10:00:06 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:00:06] "POST /api/auth/login HTTP/1.1" 500 -
+2026-09-15 10:00:09 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Data too long for column 'Password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\auth_controller.py", line 40, in login
+    usuario = UsuarioService.autenticar(dados.get("Username"), dados.get("Password"))
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 78, in autenticar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 86, in save_obj
+    _emit_update_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        update,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 913, in _emit_update_statements
+    c = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'Password' at row 1")
+[SQL: UPDATE `Usuario` SET `Password`=%(Password)s WHERE `Usuario`.`ID` = %(Usuario_ID)s]
+[parameters: {'Password': 'scrypt:32768:8:1$2Ss2Xjz9kcTazb4v$a58d34d57281968f67ac0445e39f5f5ef161156a621acd4456555bf38a893dda2d0cfa9b6fb4f6c3329e7657eb3e17cc1a2cfab921068cc38ba24953af610e4a', 'Usuario_ID': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-09-15 10:00:09 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:00:09] "POST /api/auth/login HTTP/1.1" 500 -
+2026-09-15 10:02:43 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\auth_controller.py', reloading
+2026-09-15 10:02:44 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:02:50 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:02:50 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:04:33 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\models\\sugestao_preco.py', reloading
+2026-09-15 10:04:34 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:04:38 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:04:38 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:05:02 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\operacao_controller.py', reloading
+2026-09-15 10:05:03 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:05:08 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:05:08 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:05:31 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\produto_controller.py', reloading
+2026-09-15 10:05:32 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:05:36 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:05:36 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:06:39 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\config.py', reloading
+2026-09-15 10:06:40 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:06:54 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:06:54 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:08:05 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:08:05 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:08:05 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:08:07 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:08:07 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:08:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:20] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:08:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:20] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:08:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:20] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:08:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:20] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:08:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:20] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:08:21 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:21] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:08:21 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:21] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:08:41 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Data too long for column 'Password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\auth_controller.py", line 40, in login
+    usuario = UsuarioService.autenticar(dados.get("Username"), dados.get("Password"))
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 86, in autenticar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 86, in save_obj
+    _emit_update_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        update,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 913, in _emit_update_statements
+    c = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'Password' at row 1")
+[SQL: UPDATE `Usuario` SET `Password`=%(Password)s WHERE `Usuario`.`ID` = %(Usuario_ID)s]
+[parameters: {'Password': 'scrypt:32768:8:1$ff9IvWgKxR3skcYA$6a3fa28e360f32807401a05be456bb678166fba6f4bd405354445793a8186c746e487ef8a5c15067092fa9545b2992ab046ba8c9035bbf99191660978ee85e78', 'Usuario_ID': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-09-15 10:08:41 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:41] "POST /api/auth/login HTTP/1.1" 500 -
+2026-09-15 10:08:48 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Data too long for column 'Password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\auth_controller.py", line 40, in login
+    usuario = UsuarioService.autenticar(dados.get("Username"), dados.get("Password"))
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 86, in autenticar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 86, in save_obj
+    _emit_update_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        update,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 913, in _emit_update_statements
+    c = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'Password' at row 1")
+[SQL: UPDATE `Usuario` SET `Password`=%(Password)s WHERE `Usuario`.`ID` = %(Usuario_ID)s]
+[parameters: {'Password': 'scrypt:32768:8:1$U6DQa0floa8GsdgR$26795b79fc67aac2ed9abf08a4ee712b3edd328b9fb7099a7a7dc5e923766faa3704a4083107bb5c51021bd25f9fe98ab588637e5a87f86e474f8f9a02fa4de1', 'Usuario_ID': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-09-15 10:08:49 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:08:49] "POST /api/auth/login HTTP/1.1" 500 -
+2026-09-15 10:14:09 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:14:09 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:14:09 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:14:12 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:14:12 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:14:23 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:23] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:14:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:24] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:14:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:24] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:14:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:24] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:14:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:24] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:14:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:24] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:14:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:24] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:14:39 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Data too long for column 'Password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\auth_controller.py", line 46, in login
+    usuario = UsuarioService.autenticar(username, password)
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 86, in autenticar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 86, in save_obj
+    _emit_update_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        update,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 913, in _emit_update_statements
+    c = connection.execute(
+        statement, multiparams, execution_options=execution_options
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 582, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 847, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 1245, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\connections.py", line 803, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\pymysql\err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'Password' at row 1")
+[SQL: UPDATE `Usuario` SET `Password`=%(Password)s WHERE `Usuario`.`ID` = %(Usuario_ID)s]
+[parameters: {'Password': 'scrypt:32768:8:1$Jr4SvyNsQAROLqqr$3deabe115bf52bc6f73ef63616f3daf3e85339eb0bff402a873c49c412ac8ab327e3aaaae6b401d6f10445b4bbb37b36c4429820bf0cc976b9af8b128019bc46', 'Usuario_ID': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-09-15 10:14:39 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:14:39] "POST /api/auth/login HTTP/1.1" 500 -
+2026-09-15 10:17:50 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:17:50 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:17:50 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:17:53 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:17:53 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:18:55 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:55] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:18:56 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:56] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:18:56 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:56] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:18:56 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:56] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:18:56 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:56] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:18:56 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:56] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:18:56 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:18:56] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:19:17 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:19:17] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-15 10:20:09 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:20:09 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:20:09 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:20:12 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:20:12 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:20:53 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:53] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:20:53 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:53] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:20:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:54] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:20:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:54] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:20:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:54] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:20:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:54] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:20:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:20:54] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:21:09 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:21:09] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-15 10:25:05 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:25:05 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:25:05 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:25:08 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:25:08 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:25:14 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:14] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:25:14 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:14] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:25:15 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:15] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:25:15 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:15] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:25:15 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:15] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:25:15 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:15] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:25:15 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:15] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:25:38 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:25:38] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-15 10:26:10 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:26:10] "POST /api/concorrentes HTTP/1.1" 401 -
+2026-09-15 10:26:30 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:26:30] "GET /api/produtos/ HTTP/1.1" 401 -
+2026-09-15 10:29:52 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\usuario_controller.py', reloading
+2026-09-15 10:29:52 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:29:53 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\usuario_service.py', reloading
+2026-09-15 10:29:53 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:29:57 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:29:57 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:29:58 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:29:58 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:30:40 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-09-15 10:30:40 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-09-15 10:30:40 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:30:40 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:30:46 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:30:46 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:30:46 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:30:46 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:32:12 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:32:12 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:32:12 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:32:15 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:32:15 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:32:23 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:23] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:32:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:24] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:32:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:24] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:32:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:24] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:32:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:24] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:32:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:24] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:32:24 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:24] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:32:43 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:32:43] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-15 10:33:08 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:33:08] "GET /api/produtos/ HTTP/1.1" 401 -
+2026-09-15 10:33:25 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:33:25] "GET /api/produtos/ HTTP/1.1" 401 -
+2026-09-15 10:33:50 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:33:50] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-15 10:34:00 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:34:00] "GET /api/produtos/ HTTP/1.1" 401 -
+2026-09-15 10:35:33 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-09-15 10:35:33 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-09-15 10:35:33 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:35:33 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:35:36 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:35:36 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:35:36 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:35:36 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:35:39 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\auth_controller.py', reloading
+2026-09-15 10:35:39 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-09-15 10:35:39 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:35:39 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:35:46 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:35:46 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:35:46 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:35:46 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:36:35 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:36:35 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:36:35 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:36:38 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:36:38 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:36:47 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:36:47] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:37:10 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:37:10] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-15 10:37:28 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:37:28] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-09-15 10:37:45 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:37:45] "POST /api/produtos/ HTTP/1.1" 403 -
+2026-09-15 10:38:09 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:38:09] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-15 10:38:27 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:38:27] "POST /api/produtos/ HTTP/1.1" 403 -
+2026-09-15 10:38:28 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:38:28] "POST /api/produtos/ HTTP/1.1" 403 -
+2026-09-15 10:38:32 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:38:32] "POST /api/produtos/ HTTP/1.1" 403 -
+2026-09-15 10:44:44 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\usuario_controller.py', reloading
+2026-09-15 10:44:44 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\usuario_service.py', reloading
+2026-09-15 10:44:45 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:44:45 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:44:50 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:44:50 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:44:50 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:44:50 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:45:29 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\logging_config.py', reloading
+2026-09-15 10:45:29 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\logging_config.py', reloading
+2026-09-15 10:45:30 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:45:30 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:45:39 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:45:39 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:45:39 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:45:39 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:46:34 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:46:34 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:46:34 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:46:36 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:46:36 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:52:07 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:07] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:52:07 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:07] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:52:08 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:08] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:52:08 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:08] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:52:08 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:08] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:52:08 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:08] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:52:08 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:08] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:52:15 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-15 10:52:15 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-15 10:52:15 | INFO | werkzeug |  * Restarting with stat
+2026-09-15 10:52:19 | WARNING | werkzeug |  * Debugger is active!
+2026-09-15 10:52:19 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-15 10:52:19 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:19] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-15 10:52:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:20] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-15 10:52:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:20] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-15 10:52:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:20] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-15 10:52:20 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:20] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-15 10:52:21 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:21] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-15 10:52:21 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:21] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-15 10:52:36 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:36] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-15 10:52:54 | INFO | werkzeug | 127.0.0.1 - - [15/Sep/2026 10:52:54] "POST /api/usuarios/ HTTP/1.1" 401 -
+2026-09-16 09:11:49 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\models\\usuario.py', reloading
+2026-09-16 09:11:49 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\usuario_service.py', reloading
+2026-09-16 09:11:50 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:11:50 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:12:01 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:12:01 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:12:01 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:12:01 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:13:33 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\operacao_controller.py', reloading
+2026-09-16 09:13:33 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\cargo_controller.py', reloading
+2026-09-16 09:13:34 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:13:34 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:13:42 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:13:42 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:13:42 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:13:42 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:17:15 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\produto_controller.py', reloading
+2026-09-16 09:17:15 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\auth_controller.py', reloading
+2026-09-16 09:17:15 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:17:16 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:17:21 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:17:21 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:17:21 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:17:21 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:18:01 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\auth_controller.py', reloading
+2026-09-16 09:18:02 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\auth_controller.py', reloading
+2026-09-16 09:18:02 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:18:03 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:18:12 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:18:12 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:18:12 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:18:12 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:18:26 | ERROR | app | Erro não tratado na API
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: produto.id_produto
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\usuario_service.py", line 116, in wrapper
+    return funcao(*args, **kwargs)
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\controllers\produto_controller.py", line 87, in cadastrar
+    produto = produto_service.criar(request.get_json(silent=True))
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\services\produto_app_service.py", line 27, in criar
+    return self.repository.adicionar(produto)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\app\repositories\base_repository.py", line 22, in adicionar
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kaua.moraes\Desktop\TCC\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: produto.id_produto
+[SQL: INSERT INTO produto (nome, custo, preco_atual, estoque, data_validade) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Arroz', 10.0, 20.0, 0.0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-09-16 09:19:08 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\entities\\__init__.py', reloading
+2026-09-16 09:19:08 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\entities\\__init__.py', reloading
+2026-09-16 09:19:08 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:19:08 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:19:17 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:19:17 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:19:17 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:19:17 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:19:36 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\models\\log_sistema.py', reloading
+2026-09-16 09:19:36 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\models\\venda.py', reloading
+2026-09-16 09:19:36 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:19:36 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:19:44 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:19:44 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:19:46 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:19:46 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:22:14 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-16 09:22:14 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-16 09:22:14 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:22:17 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:22:17 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:22:22 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-16 09:22:22 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-16 09:22:22 | INFO | werkzeug |  * Restarting with stat
+2026-09-16 09:22:25 | WARNING | werkzeug |  * Debugger is active!
+2026-09-16 09:22:25 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-16 09:22:32 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:32] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-16 09:22:32 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:32] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-16 09:22:32 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:32] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-16 09:22:32 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:32] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-16 09:22:33 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:33] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-16 09:22:33 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:33] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-16 09:22:33 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:33] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-16 09:22:49 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:22:49] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-16 09:23:12 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:23:12] "POST /api/produtos/ HTTP/1.1" 201 -
+2026-09-16 09:23:35 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:23:35] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-16 09:23:50 | INFO | werkzeug | 127.0.0.1 - - [16/Sep/2026 09:23:50] "POST /api/produtos/ HTTP/1.1" 403 -
+2026-09-24 09:47:55 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-24 09:47:55 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-24 09:47:55 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 09:47:59 | WARNING | werkzeug |  * Debugger is active!
+2026-09-24 09:47:59 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-24 09:48:16 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:16] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-24 09:48:17 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:17] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-24 09:48:17 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:17] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-24 09:48:17 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:17] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-24 09:48:17 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:17] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-24 09:48:18 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:18] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-24 09:48:18 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:18] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-24 09:48:23 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:48:23] "GET /api/cargos/ HTTP/1.1" 401 -
+2026-09-24 09:50:55 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\migrations\\manager.py', reloading
+2026-09-24 09:50:56 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 09:53:01 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-24 09:53:01 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-24 09:53:01 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 09:53:06 | WARNING | werkzeug |  * Debugger is active!
+2026-09-24 09:53:06 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-24 09:53:53 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:53:53] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-24 09:54:09 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:54:09] "POST /api/auth/login HTTP/1.1" 403 -
+2026-09-24 09:54:29 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:54:29] "POST /api/auth/login HTTP/1.1" 403 -
+2026-09-24 09:55:02 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:55:02] "POST /api/auth/login HTTP/1.1" 403 -
+2026-09-24 09:55:51 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\migrations\\manager.py', reloading
+2026-09-24 09:55:51 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 09:56:05 | WARNING | werkzeug |  * Debugger is active!
+2026-09-24 09:56:05 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-24 09:57:03 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-24 09:57:03 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-24 09:57:03 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 09:57:06 | WARNING | werkzeug |  * Debugger is active!
+2026-09-24 09:57:06 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-24 09:57:12 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:12] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-24 09:57:12 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:12] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-24 09:57:13 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:13] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-24 09:57:13 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:13] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-24 09:57:13 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:13] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-24 09:57:13 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:13] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-24 09:57:13 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:13] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-24 09:57:51 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 09:57:51] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-24 09:59:38 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\migrations\\manager.py', reloading
+2026-09-24 09:59:39 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 09:59:47 | WARNING | werkzeug |  * Debugger is active!
+2026-09-24 09:59:47 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-24 10:00:23 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-24 10:00:23 | INFO | werkzeug | Press CTRL+C to quit
+2026-09-24 10:00:23 | INFO | werkzeug |  * Restarting with stat
+2026-09-24 10:00:27 | WARNING | werkzeug |  * Debugger is active!
+2026-09-24 10:00:27 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-09-24 10:00:30 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:30] "GET /apidocs/ HTTP/1.1" 200 -
+2026-09-24 10:00:30 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:30] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 304 -
+2026-09-24 10:00:30 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:30] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 304 -
+2026-09-24 10:00:30 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:30] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+2026-09-24 10:00:30 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:30] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 304 -
+2026-09-24 10:00:31 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:31] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 304 -
+2026-09-24 10:00:31 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:31] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-09-24 10:00:44 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:44] "GET /api/cargos/ HTTP/1.1" 401 -
+2026-09-24 10:00:49 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:49] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-24 10:00:54 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:00:54] "POST /api/auth/login HTTP/1.1" 401 -
+2026-09-24 10:01:01 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:01:01] "POST /api/auth/login HTTP/1.1" 200 -
+2026-09-24 10:01:13 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:01:13] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-09-24 10:01:32 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:01:32] "POST /api/feedbacks HTTP/1.1" 403 -
+2026-09-24 10:01:47 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:01:47] "POST /api/produtos/ HTTP/1.1" 403 -
+2026-09-24 10:01:56 | INFO | werkzeug | 127.0.0.1 - - [24/Sep/2026 10:01:56] "GET /api/produtos/ HTTP/1.1" 200 -
