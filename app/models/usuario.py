@@ -8,7 +8,7 @@ class Usuario(db.Model):
 
     id = db.Column("ID", db.Integer, primary_key=True, autoincrement=True)
     username = db.Column("Username", db.String(50), nullable=False, unique=True)
-    password = db.Column("Password", db.String(50), nullable=False)
+    password = db.Column("Password", db.String(255), nullable=False)
     name = db.Column("Name", db.String(100), nullable=False)
     creation_date = db.Column("Creation_Date", db.DateTime, default=datetime.utcnow)
     is_active = db.Column("Is_Active", db.Boolean, default=True)

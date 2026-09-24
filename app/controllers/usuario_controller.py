@@ -6,7 +6,7 @@ usuario_bp = Blueprint("usuario_bp", __name__)
 
 
 @usuario_bp.route("/", methods=["GET"])
-@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def listar():
     """
     Listar todos os usuários
@@ -22,7 +22,7 @@ def listar():
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["GET"])
-@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def buscar_por_id(id_usuario):
     """
     Buscar usuário pelo ID
@@ -47,7 +47,7 @@ def buscar_por_id(id_usuario):
 
 
 @usuario_bp.route("/", methods=["POST"])
-@verificar_permissao(["DONO"])
+@verificar_permissao(["ADMIN"])
 def cadastrar():
     """
     Cadastrar um novo usuário
@@ -97,7 +97,7 @@ def cadastrar():
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["PUT"])
-@verificar_permissao(["GERENTE", "DONO"])
+@verificar_permissao(["GERENTE", "ADMIN"])
 def atualizar(id_usuario):
     """
     Atualizar um usuário existente
@@ -147,7 +147,7 @@ def atualizar(id_usuario):
 
 
 @usuario_bp.route("/<int:id_usuario>", methods=["DELETE"])
-@verificar_permissao(["GERENTE", "DONO"])
+@verificar_permissao(["GERENTE", "ADMIN"])
 def deletar(id_usuario):
     """
     Remover um usuário pelo ID

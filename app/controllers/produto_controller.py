@@ -9,7 +9,7 @@ produto_service = ProdutoAppService()
 
 
 @produto_bp.get("/")
-@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def listar():
     """
     Lista produtos.
@@ -31,7 +31,7 @@ def listar():
 
 
 @produto_bp.get("/<int:id_produto>")
-@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def buscar_por_id(id_produto):
     """
     Busca um produto pelo ID.
@@ -56,10 +56,10 @@ def buscar_por_id(id_produto):
 
 
 @produto_bp.post("/")
-@verificar_permissao(["DONO"])
+@verificar_permissao(["ADMIN"])
 def cadastrar():
     """
-    Cadastra um produto. Apenas o dono.
+    Cadastra um produto. Apenas o admin.
     ---
     tags: [Produtos]
     security: [{Bearer: []}]
@@ -91,10 +91,10 @@ def cadastrar():
 
 
 @produto_bp.put("/<int:id_produto>")
-@verificar_permissao(["GERENTE", "DONO"])
+@verificar_permissao(["GERENTE", "ADMIN"])
 def atualizar(id_produto):
     """
-    Atualiza um produto. Gerente ou dono.
+    Atualiza um produto. Gerente ou admin.
     ---
     tags: [Produtos]
     security: [{Bearer: []}]
@@ -123,10 +123,10 @@ def atualizar(id_produto):
 
 
 @produto_bp.delete("/<int:id_produto>")
-@verificar_permissao(["GERENTE", "DONO"])
+@verificar_permissao(["GERENTE", "ADMIN"])
 def deletar(id_produto):
     """
-    Exclui um produto. Gerente ou dono.
+    Exclui um produto. Gerente ou admin.
     ---
     tags: [Produtos]
     security: [{Bearer: []}]

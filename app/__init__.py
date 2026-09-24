@@ -58,7 +58,9 @@ def create_app():
     with flask_app.app_context():
         import app.models
 
-        db.create_all()
+        from app.migrations import migrate_database
+
+        migrate_database(flask_app)
 
     from app.controllers.auth_controller import AuthController
     from app.controllers.cargo_controller import CargoController

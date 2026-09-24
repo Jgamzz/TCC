@@ -6,7 +6,7 @@ from flask_jwt_extended import get_jwt_identity, jwt_required
 from app import db
 from app.models.usuario import Usuario
 
-ROLE_IDS = {"FUNCIONARIO": 1, "GERENTE": 2, "DONO": 3}
+ROLE_IDS = {"ADMIN": 1, "GERENTE": 2, "USUARIO": 3}
 
 
 class UsuarioService:

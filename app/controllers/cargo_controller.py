@@ -6,7 +6,7 @@ cargo_bp = Blueprint("cargo_bp", __name__)
 
 
 @cargo_bp.route("/", methods=["GET"])
-@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def listar():
     """
     Listar todos os cargos
@@ -22,7 +22,7 @@ def listar():
 
 
 @cargo_bp.route("/<int:id_cargo>", methods=["GET"])
-@verificar_permissao(["FUNCIONARIO", "GERENTE", "DONO"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def buscar_por_id(id_cargo):
     """
     Buscar um cargo pelo ID
