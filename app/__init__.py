@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 from flask_jwt_extended import JWTManager
@@ -11,9 +11,13 @@ jwt = JWTManager()
 def create_app():
     from app.logging_config import configurar_logging, registrar_erro
 
-    flask_app = Flask(__name__)
+    flask_app = Flask(__name__, template_folder="template")
     flask_app.config.from_object(Config)
     jwt.init_app(flask_app)
+
+    @flask_app.route("/")
+    def index():
+        return render_template("index.html")
 
     @jwt.unauthorized_loader
     def handle_missing_token(_error):
