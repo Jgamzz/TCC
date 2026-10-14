@@ -73,6 +73,7 @@ def create_app():
 
     from app.controllers.auth_controller import AuthController
     from app.controllers.cargo_controller import CargoController
+    from app.controllers.estoque_controller import EstoqueController
     from app.controllers.operacao_controller import OperacaoController
     from app.controllers.produto_controller import ProdutoController
     from app.controllers.usuario_controller import UsuarioController
@@ -81,6 +82,9 @@ def create_app():
         ProdutoController.blueprint, url_prefix="/api/produtos"
     )
     flask_app.register_blueprint(CargoController.blueprint, url_prefix="/api/cargos")
+    flask_app.register_blueprint(
+        EstoqueController.blueprint, url_prefix="/api/estoque"
+    )
     flask_app.register_blueprint(
         UsuarioController.blueprint, url_prefix="/api/usuarios"
     )

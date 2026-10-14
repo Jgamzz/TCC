@@ -80,6 +80,7 @@ async function render() {
   const main = document.getElementById('mainView');
   if (currentPage === 'gestao') { await renderGestao(); return; }
   if (currentPage === 'concorrencia') { await renderConcorrenciaPlanilhas(); return; }
+  if (currentPage === 'historico') { await renderHistorico(); return; }
   
   if (currentPage === 'equipa' && usuarios.length === 0) {
     await refreshUsuarios();
@@ -132,22 +133,6 @@ function renderDashboard(title) {
     `;
   }
 
-  if (currentPage === 'historico') {
-    return `
-      <h1>${title}</h1>
-      <div class="note" style="margin-bottom: 20px;">
-        O histórico será exibido aqui assim que a API disponibilizar os registros de movimentação e alteração de preços.
-      </div>
-      <div class="cards history-grid">
-        <div class="card empty-state">
-          <span class="empty-state-icon">📋</span>
-          <strong>Nenhum histórico disponível</strong>
-          <span>Integração com o backend pendente.</span>
-        </div>
-      </div>
-    `;
-  }
-  
   if (currentPage === 'inicio') {
     let valorTotalCusto = 0, valorTotalPreco = 0, totalAlertas = 0, somaMargens = 0, produtosComMargem = 0;
     list.forEach(p => {
@@ -436,6 +421,62 @@ function escaparHtml(valor) {
     '"': '&quot;',
     "'": '&#39;'
   })[caractere]);
+}
+
+async function renderHistorico() {
+  const main = document.getElementById('mainView');
+  main.innerHTML = '<h1>Histórico e Relatórios</h1><p>Carregando histórico...</p>';
+
+  try {
+    const eventos = await api('/historico');
+    if (eventos.length === 0) {
+      main.innerHTML = `
+        <h1>Histórico e Relatórios</h1>
+        <div class="card empty-state">
+          <span class="empty-state-icon">📋</span>
+          <strong>Nenhum histórico disponível</strong>
+          <span>Feedbacks, movimentações de estoque e alterações de preço aparecerão aqui.</span>
+        </div>
+      `;
+      return;
+    }
+
+    const formatarData = (valor) =>
+      new Date(valor).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+    const linhas = eventos.map((evento) => {
+      let tipo;
+      let detalhes;
+      if (evento.tipo === 'FEEDBACK') {
+        tipo = '<span class="history-badge history-feedback">Feedback</span>';
+        detalhes = `${evento.cliente ? `<strong>Cliente:</strong> ${escaparHtml(evento.cliente)} — ` : ''}${escaparHtml(evento.mensagem)}`;
+      } else if (evento.tipo === 'ESTOQUE') {
+        const entrada = evento.tipo_operacao === 'ENTRADA';
+        tipo = `<span class="history-badge ${entrada ? 'history-entrada' : 'history-saida'}">${entrada ? 'Entrada' : 'Saída'} de estoque</span>`;
+        detalhes = `${escaparHtml(evento.quantidade)} unidade(s) — ${escaparHtml(evento.motivo)}`;
+      } else {
+        tipo = '<span class="history-badge history-preco">Alteração de preço</span>';
+        detalhes = `De R$ ${escaparHtml(Number(evento.preco_antigo).toFixed(2))} para R$ ${escaparHtml(Number(evento.preco_novo).toFixed(2))} — ${escaparHtml(evento.motivo)}`;
+      }
+      return `<tr>
+        <td>${escaparHtml(formatarData(evento.data))}</td>
+        <td>${tipo}</td>
+        <td>${escaparHtml(evento.produto)}</td>
+        <td>${detalhes}</td>
+      </tr>`;
+    }).join('');
+
+    main.innerHTML = `
+      <h1>Histórico e Relatórios</h1>
+      <div class="history-table-wrap">
+        <table>
+          <thead><tr><th>Data da movimentação</th><th>Tipo</th><th>Produto</th><th>Detalhes</th></tr></thead>
+          <tbody>${linhas}</tbody>
+        </table>
+      </div>
+    `;
+  } catch (error) {
+    main.innerHTML = `<h1>Histórico e Relatórios</h1><div class="err">${escaparHtml(error.message)}</div>`;
+  }
 }
 
 async function renderConcorrenciaPlanilhas() {

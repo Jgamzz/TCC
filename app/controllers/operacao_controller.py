@@ -5,6 +5,7 @@ from flask import Blueprint, jsonify, request
 from app.services.estoque_app_service import EstoqueAppService
 from app.services.precificacao_app_service import PrecificacaoAppService
 from app.services.usuario_service import verificar_permissao
+from app.repositories.historico_repository import HistoricoRepository
 from app.repositories.planilha_concorrente_repository import (
     PlanilhaConcorrenteRepository,
 )
@@ -13,6 +14,14 @@ operacao_bp = Blueprint("operacao_bp", __name__)
 estoque_service = EstoqueAppService()
 preco_service = PrecificacaoAppService()
 planilhas_concorrentes = PlanilhaConcorrenteRepository()
+historico_repository = HistoricoRepository()
+
+
+@operacao_bp.get("/historico")
+@verificar_permissao(["GERENTE", "ADMIN"])
+def listar_historico():
+    """Retorna feedbacks, movimentações de estoque e alterações de preço."""
+    return jsonify(historico_repository.listar())
 
 
 @operacao_bp.get("/concorrentes/planilhas")
@@ -179,6 +188,7 @@ class OperacaoController:
     """Controller HTTP das operações de estoque e precificação."""
 
     blueprint = operacao_bp
+    listar_historico = staticmethod(listar_historico)
     registrar_venda = staticmethod(registrar_venda)
     registrar_concorrente = staticmethod(registrar_concorrente)
     registrar_feedback = staticmethod(registrar_feedback)

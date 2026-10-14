@@ -2066,3 +2066,182 @@ werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on 
 2026-10-14 11:36:06 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:36:06] "GET /static/js/app.js HTTP/1.1" 200 -
 2026-10-14 11:36:06 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:36:06] "GET /api/produtos/ HTTP/1.1" 200 -
 2026-10-14 11:36:07 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:36:07] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 11:41:32 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 11:41:32 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-14 11:41:32 | INFO | werkzeug | Press CTRL+C to quit
+2026-10-14 11:41:32 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 11:41:37 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 11:41:37 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 11:41:37 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 11:41:41 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:41] "GET / HTTP/1.1" 200 -
+2026-10-14 11:41:41 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:41] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-14 11:41:41 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:41] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-14 11:41:41 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:41] "GET /static/js/modais.js HTTP/1.1" 304 -
+2026-10-14 11:41:41 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:41] "GET /static/js/app.js HTTP/1.1" 304 -
+2026-10-14 11:41:42 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:42] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 11:41:50 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:50] "GET / HTTP/1.1" 200 -
+2026-10-14 11:41:50 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:50] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-14 11:41:50 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:50] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-14 11:41:50 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:50] "GET /static/js/app.js HTTP/1.1" 304 -
+2026-10-14 11:41:50 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:50] "GET /static/js/modais.js HTTP/1.1" 304 -
+2026-10-14 11:41:51 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:51] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 11:41:57 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:57] "POST /api/auth/login HTTP/1.1" 200 -
+2026-10-14 11:41:57 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:57] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 11:41:58 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 11:41:58] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:08:41 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\repositories\\produto_repository.py', reloading
+2026-10-14 13:08:44 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:09:03 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:09:03 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:09:03 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:09:13 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\precificacao_app_service.py', reloading
+2026-10-14 13:09:14 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:09:19 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:09:19 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:09:19 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:09:37 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\operacao_controller.py', reloading
+2026-10-14 13:09:40 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:09:47 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:09:47 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:09:47 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:10:23 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\usuario_service.py', reloading
+2026-10-14 13:10:23 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:10:30 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:10:30 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:10:30 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:11:33 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\migrations\\manager.py', reloading
+2026-10-14 13:11:33 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:11:41 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:11:41 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:11:41 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:11:45 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\migrations\\manager.py', reloading
+2026-10-14 13:11:45 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:11:53 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:11:53 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:11:53 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:12:53 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-10-14 13:12:53 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:13:03 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:13:03 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:13:03 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:13:27 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\estoque_app_service.py', reloading
+2026-10-14 13:13:28 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:13:37 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:13:37 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:13:37 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:14:39 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:15:19 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\produto_controller.py', reloading
+2026-10-14 13:15:20 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:15:26 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:15:26 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:15:26 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:15:41 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\produto_controller.py', reloading
+2026-10-14 13:15:42 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:15:48 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:15:48 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:15:48 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:15:56 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\operacao_controller.py', reloading
+2026-10-14 13:15:58 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:16:06 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:16:06 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:16:06 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:16:07 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\operacao_controller.py', reloading
+2026-10-14 13:16:08 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:16:15 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:16:15 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:16:15 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:17:19 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\__init__.py', reloading
+2026-10-14 13:17:21 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:17:26 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:17:26 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:17:26 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:18:03 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:18:46 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\operacao_controller.py', reloading
+2026-10-14 13:18:48 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:18:57 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:18:57 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:18:57 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:19:40 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:20:51 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:21:30 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\precificacao_app_service.py', reloading
+2026-10-14 13:21:31 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:21:39 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:21:39 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:21:39 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:22:44 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:22:44] "POST /api/auth/login HTTP/1.1" 200 -
+2026-10-14 13:22:44 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:22:44] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 13:22:47 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:22:47] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:24:16 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:24:16] "POST /api/auth/login HTTP/1.1" 200 -
+2026-10-14 13:24:16 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:24:16] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 13:24:18 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:24:18] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:24:19 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:24:19] "GET /api/usuarios/ HTTP/1.1" 200 -
+2026-10-14 13:24:29 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:24:29] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:26:23 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\auth_controller.py', reloading
+2026-10-14 13:26:25 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:26:31 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:26:31 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:26:31 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:26:40 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:26:40] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:27:19 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:27:19] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-10-14 13:33:51 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:33:51] "POST /api/vendas HTTP/1.1" 201 -
+2026-10-14 13:33:51 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:33:51] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 13:42:31 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:42:31 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-14 13:42:31 | INFO | werkzeug | Press CTRL+C to quit
+2026-10-14 13:42:31 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:42:36 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:42:36 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:42:36 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:42:44 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:44] "GET / HTTP/1.1" 200 -
+2026-10-14 13:42:44 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:44] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-14 13:42:44 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:44] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-14 13:42:45 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:45] "GET /static/js/modais.js HTTP/1.1" 200 -
+2026-10-14 13:42:45 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:45] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-10-14 13:42:45 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:45] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 13:42:46 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:46] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:42:48 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:48] "GET /api/usuarios/ HTTP/1.1" 200 -
+2026-10-14 13:42:55 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:55] "POST /api/vendas HTTP/1.1" 400 -
+2026-10-14 13:42:58 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:58] "POST /api/vendas HTTP/1.1" 201 -
+2026-10-14 13:42:58 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:42:58] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 13:45:45 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\repositories\\historico_repository.py', reloading
+2026-10-14 13:45:45 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:45:50 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:45:50 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:45:50 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:46:14 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\estoque_app_service.py', reloading
+2026-10-14 13:46:14 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:46:21 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:46:21 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:46:21 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:47:44 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\repositories\\historico_repository.py', reloading
+2026-10-14 13:47:45 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:47:50 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:47:50 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:47:50 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:47:51 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\repositories\\historico_repository.py', reloading
+2026-10-14 13:47:51 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:47:58 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:47:58 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:47:58 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:48:15 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\produto_app_service.py', reloading
+2026-10-14 13:48:16 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:48:21 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:48:21 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:48:21 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:48:32 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\services\\produto_app_service.py', reloading
+2026-10-14 13:48:33 | INFO | werkzeug |  * Restarting with stat
+2026-10-14 13:48:39 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-14 13:48:39 | WARNING | werkzeug |  * Debugger is active!
+2026-10-14 13:48:39 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-14 13:50:46 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:46] "GET / HTTP/1.1" 200 -
+2026-10-14 13:50:46 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:46] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-10-14 13:50:46 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:46] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-14 13:50:46 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:46] "GET /static/js/modais.js HTTP/1.1" 304 -
+2026-10-14 13:50:46 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:46] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-10-14 13:50:47 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:47] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-14 13:50:48 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:50:48] "GET /api/historico HTTP/1.1" 200 -
+2026-10-14 13:51:24 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:24] "GET /api/usuarios/ HTTP/1.1" 200 -
+2026-10-14 13:51:25 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:25] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-14 13:51:30 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:30] "GET /api/sugestoes HTTP/1.1" 200 -
+2026-10-14 13:51:30 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:30] "GET /api/historico HTTP/1.1" 200 -

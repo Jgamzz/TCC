@@ -83,6 +83,13 @@ button.btn{border:none;border-radius:6px;padding:7px 14px;font-size:13px;font-we
 .settings-card .modal-input{width:100%;padding:10px;border:1px solid var(--borda);border-radius:6px;margin-bottom:20px;}
 .settings-save{width:100%;padding:12px;font-size:15px;}
 .history-grid{grid-template-columns:1fr;max-width:680px;margin:0 auto;}
+.history-table-wrap{width:100%;overflow-x:auto;}
+.history-table-wrap table{min-width:720px;}
+.history-badge{display:inline-block;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:700;white-space:nowrap;}
+.history-feedback{background:#f3e8ff;color:#7e22ce;}
+.history-entrada{background:#e6f7ec;color:#15803d;}
+.history-saida{background:var(--laranja-bg);color:var(--laranja);}
+.history-preco{background:#eaf1ff;color:var(--azul-escuro);}
 .empty-state{display:flex;flex-direction:column;align-items:center;gap:8px;padding:40px;color:var(--cinza);text-align:center;}
 .empty-state-icon{font-size:30px;}
 main > table{max-width:1200px;margin-left:auto;margin-right:auto;}
