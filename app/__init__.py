@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 from flask_jwt_extended import JWTManager
+from werkzeug.exceptions import HTTPException
 from app.config import Config
 
 db = SQLAlchemy()
@@ -11,7 +12,11 @@ jwt = JWTManager()
 def create_app():
     from app.logging_config import configurar_logging, registrar_erro
 
-    flask_app = Flask(__name__, template_folder="template")
+    flask_app = Flask(
+        __name__,
+        template_folder="../frontend/template",
+        static_folder="../frontend/static",
+    )
     flask_app.config.from_object(Config)
     jwt.init_app(flask_app)
 
@@ -83,6 +88,22 @@ def create_app():
     flask_app.register_blueprint(AuthController.blueprint, url_prefix="/api/auth")
 
     configurar_logging(flask_app)
+
+    with flask_app.app_context():
+        from app.repositories.planilha_concorrente_repository import (
+            PlanilhaConcorrenteRepository,
+        )
+
+        arquivos, registros = PlanilhaConcorrenteRepository().sincronizar()
+        flask_app.logger.info(
+            "Planilhas de concorrência sincronizadas: %s arquivo(s), %s produto(s).",
+            arquivos,
+            registros,
+        )
+
+    @flask_app.errorhandler(HTTPException)
+    def handle_http_error(error):
+        return error
 
     @flask_app.errorhandler(Exception)
     def handle_unexpected_error(error):

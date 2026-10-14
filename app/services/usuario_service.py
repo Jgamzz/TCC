@@ -69,13 +69,16 @@ class UsuarioService:
     @staticmethod
     def autenticar(username, password):
         if not username or not password:
-            return None
+            return None, "usuario"
 
         usuario = Usuario.query.filter_by(username=username).first()
         if not usuario or not usuario.is_active:
-            return None
+            return None, "usuario"
 
-        return usuario if usuario.password == password else None
+        if usuario.password != password:
+            return None, "senha"
+
+        return usuario, None
 
     @staticmethod
     def deletar_usuario(id_usuario):

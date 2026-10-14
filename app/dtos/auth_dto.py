@@ -19,6 +19,7 @@ class LoginRequestDto:
 @dataclass(frozen=True)
 class TokenResponseDto:
     access_token: str
+    usuario: Dict[str, Any]
 
-    def to_dict(self) -> Dict[str, str]:
-        return {"access_token": self.access_token}
+    def to_dict(self) -> Dict[str, Any]:
+        return {"access_token": self.access_token, "usuario": self.usuario}

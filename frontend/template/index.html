@@ -12,21 +12,17 @@
 <div id="loginView">
   <div class="loginBox">
     <h1>PrecificaJá</h1>
-    <div class="note" style="margin-top:14px;">Autenticação ativada. Insira as suas credenciais.</div>
     
-    <label style="font-size:13px;color:#6b7280;">E-mail ou Usuário</label>
-    <input id="loginEmail" type="text" placeholder="exemplo@email.com">
+    <label style="font-size:13px;color:#6b7280;">Usuário</label>
+    <input id="loginEmail" type="text" oninput="limparErroLogin('usuario')">
+    <div class="login-field-error" id="loginUsuarioErr" aria-live="polite"></div>
     
     <label style="font-size:13px;color:#6b7280;margin-top:10px;display:block;">Senha</label>
-    <input id="loginSenha" type="password" placeholder="Sua senha">
+    <input id="loginSenha" type="password" oninput="limparErroLogin('senha')">
+    <div class="login-field-error" id="loginSenhaErr" aria-live="polite"></div>
     
     <button onclick="doLogin()">Entrar</button>
     <div class="err" id="loginErr"></div>
-    
-    <div class="cfg">
-      URL da API
-      <input id="apiBaseInput" value="http://localhost:5000/api" oninput="API_BASE=this.value">
-    </div>
   </div>
 </div>
 
@@ -51,10 +47,12 @@
   <div class="modal">
     <h2 id="produtoModalTitle">Alterar produto</h2>
     <label>Nome</label><input id="f_nome">
-    <label>Custo (R$)</label><input id="f_custo" type="number" step="0.01">
-    <label>Preço atual (R$)</label><input id="f_preco" type="number" step="0.01">
+    <label>Valor Fornecedor</label>
+    <div class="currency-input"><span>R$</span><input id="f_custo" type="number" step="0.01"></div>
+    <label>Valor de venda</label>
+    <div class="currency-input"><span>R$</span><input id="f_preco" type="number" step="0.01"></div>
     <label>Estoque</label><input id="f_estoque" type="number" step="1">
-    <label>Validade (opcional)</label><input id="f_validade" type="date">
+    <label>Validade</label><input id="f_validade" type="date">
     <div class="err" id="produtoErr"></div>
     <div class="row">
       <button class="btn btn-outline" onclick="closeProdutoModal()">Cancelar</button>

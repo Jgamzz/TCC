@@ -5,10 +5,21 @@ from flask import Blueprint, jsonify, request
 from app.services.estoque_app_service import EstoqueAppService
 from app.services.precificacao_app_service import PrecificacaoAppService
 from app.services.usuario_service import verificar_permissao
+from app.repositories.planilha_concorrente_repository import (
+    PlanilhaConcorrenteRepository,
+)
 
 operacao_bp = Blueprint("operacao_bp", __name__)
 estoque_service = EstoqueAppService()
 preco_service = PrecificacaoAppService()
+planilhas_concorrentes = PlanilhaConcorrenteRepository()
+
+
+@operacao_bp.get("/concorrentes/planilhas")
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
+def listar_planilhas_concorrentes():
+    """Retorna preços importados das planilhas para comparação."""
+    return jsonify(planilhas_concorrentes.listar_comparacao())
 
 
 @operacao_bp.post("/vendas")
@@ -73,7 +84,7 @@ def registrar_concorrente():
 
 
 @operacao_bp.post("/feedbacks")
-@verificar_permissao(["GERENTE", "ADMIN"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def registrar_feedback():
     """
     Registra um feedback de cliente.

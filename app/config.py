@@ -1,7 +1,11 @@
 import os
+from pathlib import Path
 
 
 class Config:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    PLANILHAS_CONCORRENTES_DIR = BASE_DIR / "database" / "concorrentes"
+
     # Substitua 'root' e 'sua_senha' pelo seu usuario e senha do MySQL
     DB_USER = os.getenv("DB_USER", "root")
     DB_PASSWORD = os.getenv("DB_PASSWORD", "141516Ka!")

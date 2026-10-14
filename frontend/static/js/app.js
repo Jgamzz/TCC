@@ -79,6 +79,7 @@ function restaurarSidebar() {
 async function render() {
   const main = document.getElementById('mainView');
   if (currentPage === 'gestao') { await renderGestao(); return; }
+  if (currentPage === 'concorrencia') { await renderConcorrenciaPlanilhas(); return; }
   
   if (currentPage === 'equipa' && usuarios.length === 0) {
     await refreshUsuarios();
@@ -424,6 +425,60 @@ async function renderGestao() {
     main.innerHTML = `<h1>Aprovação de Sugestões de Preço</h1><table><thead><tr><th>Produto</th><th>Preço Atual</th><th>Sugestão</th><th>Justificativa</th><th>Ações</th></tr></thead><tbody>${rows}</tbody></table>`;
   } catch (e) {
     main.innerHTML = `<h1>Erro</h1><div class="err">${e.message}</div>`;
+  }
+}
+
+function escaparHtml(valor) {
+  return String(valor).replace(/[&<>"']/g, (caractere) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[caractere]);
+}
+
+async function renderConcorrenciaPlanilhas() {
+  const main = document.getElementById('mainView');
+  main.innerHTML = '<h1>Monitoramento da Concorrência</h1><p>Carregando preços...</p>';
+
+  try {
+    const comparacao = await api('/concorrentes/planilhas');
+    if (comparacao.arquivos.length === 0) {
+      main.innerHTML = `
+        <h1>Monitoramento da Concorrência</h1>
+        <div class="note">Nenhuma planilha encontrada. Coloque arquivos .xlsx ou .xlsm na pasta database/concorrentes e reinicie a aplicação.</div>
+      `;
+      return;
+    }
+
+    const formatarValor = (valor) =>
+      new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
+    const cabecalhos = comparacao.arquivos
+      .map((arquivo) => `<th>${escaparHtml(arquivo.replace(/\.(xlsx|xlsm)$/i, ''))}</th>`)
+      .join('');
+    const linhas = comparacao.produtos.map((produto) => `
+      <tr>
+        <td>${escaparHtml(produto.nome_produto)}</td>
+        ${comparacao.arquivos.map((arquivo) => {
+          const precos = produto.precos[arquivo] || [];
+          return `<td>${precos.length ? precos.map(formatarValor).join('<br>') : '—'}</td>`;
+        }).join('')}
+        <td>${produto.diferenca === null ? '—' : formatarValor(produto.diferenca)}</td>
+      </tr>
+    `).join('');
+
+    main.innerHTML = `
+      <h1>Monitoramento da Concorrência</h1>
+      <div class="competitor-table-wrap">
+        <table>
+          <thead><tr><th>Produto</th>${cabecalhos}<th>Diferença de preços</th></tr></thead>
+          <tbody>${linhas || `<tr><td colspan="${comparacao.arquivos.length + 2}" class="muted">As planilhas não contêm produtos.</td></tr>`}</tbody>
+        </table>
+      </div>
+    `;
+  } catch (error) {
+    main.innerHTML = `<h1>Monitoramento da Concorrência</h1><div class="err">${escaparHtml(error.message)}</div>`;
   }
 }
 

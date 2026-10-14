@@ -46,9 +46,29 @@ class AuthController:
         except ValueError as error:
             return jsonify({"erro": str(error)}), 400
 
-        usuario = UsuarioService.autenticar(login_dto.username, login_dto.password)
+        usuario, erro_credencial = UsuarioService.autenticar(
+            login_dto.username, login_dto.password
+        )
         if not usuario:
-            return jsonify({"erro": "Usuário ou senha inválidos."}), 401
+            if erro_credencial == "senha":
+                return (
+                    jsonify(
+                        {
+                            "erro": "Senha incorreta.",
+                            "campos": ["senha"],
+                        }
+                    ),
+                    401,
+                )
+            return (
+                jsonify(
+                    {
+                        "erro": "Usuário e senha incorretos.",
+                        "campos": ["usuario", "senha"],
+                    }
+                ),
+                401,
+            )
         if usuario.cargo_id is None:
             return (
                 jsonify({"erro": "Usuário autenticado, mas sem cargo definido."}),
@@ -59,7 +79,9 @@ class AuthController:
             identity=str(usuario.id),
             additional_claims={"cargo_id": usuario.cargo_id},
         )
-        return jsonify(TokenResponseDto(access_token=token).to_dict())
+        return jsonify(
+            TokenResponseDto(access_token=token, usuario=usuario.to_dict()).to_dict()
+        )
 
 
 auth_bp = AuthController.blueprint

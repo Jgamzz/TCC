@@ -54,8 +54,22 @@ async function api(path, opts={}) {
     const res = await fetch(API_BASE + path, Object.assign({}, opts, {headers}));
     let body = null;
     try { body = await res.json(); } catch(e){}
-    if (!res.ok) throw new Error((body && (body.erro||body.message)) || ('Erro HTTP ' + res.status));
-        return body;
+    if (!res.ok) {
+        const error = new Error((body && (body.erro || body.message)) || ('Erro HTTP ' + res.status));
+        error.campos = body && (body.campos || (body.campo ? [body.campo] : []));
+        throw error;
+    }
+    return body;
+}
+
+function limparErroLogin(campo) {
+    const usuario = campo === 'usuario';
+    const input = document.getElementById(usuario ? 'loginEmail' : 'loginSenha');
+    const mensagem = document.getElementById(usuario ? 'loginUsuarioErr' : 'loginSenhaErr');
+    input.classList.remove('input-error');
+    input.setAttribute('aria-invalid', 'false');
+    mensagem.textContent = '';
+    document.getElementById('loginErr').textContent = '';
 }
 
 async function refreshUsuarios() {
@@ -75,19 +89,54 @@ async function refreshProdutos() {
 async function doLogin(){
     const email = document.getElementById('loginEmail').value.trim();
     const senha = document.getElementById('loginSenha').value.trim();
-    if (!email || !senha) return document.getElementById('loginErr').textContent = 'Preencha o e-mail e a senha.';
+    const usuarioInput = document.getElementById('loginEmail');
+    const senhaInput = document.getElementById('loginSenha');
+    const loginErr = document.getElementById('loginErr');
+    const usuarioErr = document.getElementById('loginUsuarioErr');
+    const senhaErr = document.getElementById('loginSenhaErr');
+    usuarioInput.classList.remove('input-error');
+    senhaInput.classList.remove('input-error');
+    usuarioInput.setAttribute('aria-invalid', 'false');
+    senhaInput.setAttribute('aria-invalid', 'false');
+    usuarioErr.textContent = '';
+    senhaErr.textContent = '';
+    loginErr.textContent = '';
+    if (!email || !senha) {
+        if (!email) {
+            usuarioInput.classList.add('input-error');
+            usuarioInput.setAttribute('aria-invalid', 'true');
+            usuarioErr.textContent = 'Informe o usuário.';
+        }
+        if (!senha) {
+            senhaInput.classList.add('input-error');
+            senhaInput.setAttribute('aria-invalid', 'true');
+            senhaErr.textContent = 'Informe a senha.';
+        }
+        return;
+    }
 
     try {
-    const resp = await api('/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({ Username: email, Password: senha })
-    });
-    accessToken = resp.access_token;
-    user = resp.usuario;
-    localStorage.setItem(SESSION_KEY, JSON.stringify({ accessToken, user }));
-    await iniciarSessao();
+        const resp = await api('/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({ Username: email, Password: senha })
+        });
+        accessToken = resp.access_token;
+        user = resp.usuario;
+        localStorage.setItem(SESSION_KEY, JSON.stringify({ accessToken, user }));
+        await iniciarSessao();
     } catch(e) {
-        document.getElementById('loginErr').textContent = 'Erro ao entrar: ' + e.message;
+        const campos = e.campos || [];
+        if (campos.includes('usuario')) {
+            usuarioInput.classList.add('input-error');
+            usuarioInput.setAttribute('aria-invalid', 'true');
+            usuarioErr.textContent = 'Usuário incorreto.';
+        }
+        if (campos.includes('senha')) {
+            senhaInput.classList.add('input-error');
+            senhaInput.setAttribute('aria-invalid', 'true');
+            senhaErr.textContent = 'Senha incorreta.';
+        }
+        if (campos.length === 0) loginErr.textContent = e.message;
     }
 }
 
