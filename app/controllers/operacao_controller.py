@@ -32,7 +32,7 @@ def listar_planilhas_concorrentes():
 
 
 @operacao_bp.post("/vendas")
-@verificar_permissao(["GERENTE", "ADMIN"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def registrar_venda():
     """
     Registra uma venda e reduz o estoque.

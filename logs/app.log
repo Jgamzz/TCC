@@ -2245,3 +2245,63 @@ werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on 
 2026-10-14 13:51:25 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:25] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
 2026-10-14 13:51:30 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:30] "GET /api/sugestoes HTTP/1.1" 200 -
 2026-10-14 13:51:30 | INFO | werkzeug | 127.0.0.1 - - [14/Oct/2026 13:51:30] "GET /api/historico HTTP/1.1" 200 -
+2026-10-15 13:15:46 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-15 13:15:46 | INFO | werkzeug | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-15 13:15:46 | INFO | werkzeug | Press CTRL+C to quit
+2026-10-15 13:15:46 | INFO | werkzeug |  * Restarting with stat
+2026-10-15 13:15:51 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-15 13:15:51 | WARNING | werkzeug |  * Debugger is active!
+2026-10-15 13:15:51 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-15 13:16:07 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:07] "GET / HTTP/1.1" 200 -
+2026-10-15 13:16:07 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:07] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-15 13:16:07 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:07] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-15 13:16:07 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:07] "GET /static/js/modais.js HTTP/1.1" 304 -
+2026-10-15 13:16:07 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:07] "GET /static/js/app.js HTTP/1.1" 304 -
+2026-10-15 13:16:08 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:08] "GET /favicon.ico HTTP/1.1" 404 -
+2026-10-15 13:16:37 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:37] "POST /api/auth/login HTTP/1.1" 200 -
+2026-10-15 13:16:37 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:37] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:16:56 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:16:56] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-15 13:17:25 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:17:25] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-15 13:18:08 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:18:08] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-15 13:22:36 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:36] "GET / HTTP/1.1" 200 -
+2026-10-15 13:22:36 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:36] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-10-15 13:22:36 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:36] "GET /static/js/api.js HTTP/1.1" 200 -
+2026-10-15 13:22:36 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:36] "GET /static/js/modais.js HTTP/1.1" 200 -
+2026-10-15 13:22:36 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:36] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-10-15 13:22:37 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:37] "GET /favicon.ico HTTP/1.1" 404 -
+2026-10-15 13:22:37 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:22:37] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:23:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:23:40] "GET / HTTP/1.1" 200 -
+2026-10-15 13:23:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:23:40] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-15 13:23:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:23:40] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-15 13:23:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:23:40] "GET /static/js/modais.js HTTP/1.1" 304 -
+2026-10-15 13:23:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:23:40] "GET /static/js/app.js HTTP/1.1" 304 -
+2026-10-15 13:23:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:23:40] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:28:09 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:09] "GET / HTTP/1.1" 200 -
+2026-10-15 13:28:09 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:09] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-10-15 13:28:09 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:09] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-15 13:28:10 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:10] "GET /static/js/modais.js HTTP/1.1" 200 -
+2026-10-15 13:28:10 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:10] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-10-15 13:28:10 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:10] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:28:40 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:40] "POST /api/estoque/ HTTP/1.1" 403 -
+2026-10-15 13:28:54 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:54] "POST /api/estoque/ HTTP/1.1" 403 -
+2026-10-15 13:28:55 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:28:55] "POST /api/vendas HTTP/1.1" 403 -
+2026-10-15 13:29:41 | INFO | werkzeug |  * Detected change in 'C:\\Users\\kaua.moraes\\Desktop\\TCC\\app\\controllers\\estoque_controller.py', reloading
+2026-10-15 13:29:41 | INFO | werkzeug |  * Restarting with stat
+2026-10-15 13:29:52 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-15 13:29:52 | WARNING | werkzeug |  * Debugger is active!
+2026-10-15 13:29:52 | INFO | werkzeug |  * Debugger PIN: 742-185-462
+2026-10-15 13:30:32 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:32] "GET / HTTP/1.1" 200 -
+2026-10-15 13:30:32 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:32] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-15 13:30:32 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:32] "GET /static/js/api.js HTTP/1.1" 304 -
+2026-10-15 13:30:33 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:33] "GET /static/js/app.js HTTP/1.1" 304 -
+2026-10-15 13:30:33 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:33] "GET /static/js/modais.js HTTP/1.1" 304 -
+2026-10-15 13:30:33 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:33] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:30:41 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:41] "POST /api/estoque/ HTTP/1.1" 201 -
+2026-10-15 13:30:41 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:30:41] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:31:06 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:31:06] "POST /api/estoque/ HTTP/1.1" 201 -
+2026-10-15 13:31:07 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:31:07] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:34:43 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:34:43] "POST /api/auth/login HTTP/1.1" 200 -
+2026-10-15 13:34:44 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:34:44] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-15 13:34:50 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:34:50] "GET /api/concorrentes/planilhas HTTP/1.1" 200 -
+2026-10-15 13:34:51 | INFO | werkzeug | 127.0.0.1 - - [15/Oct/2026 13:34:51] "GET /api/usuarios/ HTTP/1.1" 200 -

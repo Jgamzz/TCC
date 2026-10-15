@@ -65,27 +65,43 @@
 <div class="modal-bg" id="movimentacaoModalBg">
   <div class="modal">
     <h2>Movimentar Estoque</h2>
-    <label>Selecionar produto</label>
+    <input id="m_produto" type="hidden">
+    <div class="movement-product">
+      <span class="movement-product-label">Produto selecionado</span>
+      <strong id="m_produto_nome"></strong>
+      <span id="m_produto_estoque"></span>
+    </div>
 
-    <select id="m_produto"></select>
-
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px;">
-      <div>
-        <label>Tipo de Operação</label>
-        <select id="m_tipo">
-          <option value="VENDA">Venda</option>
-          <option value="ENTRADA">Entrada</option>
-          <option value="SAIDA">Saída</option>
-        </select>
+    <fieldset class="movement-type-fieldset">
+      <legend>Tipo de operação</legend>
+      <div class="movement-type-options">
+        <label class="movement-type-option movement-entry">
+          <input type="radio" name="m_tipo" value="ENTRADA">
+          <span class="movement-type-icon" aria-hidden="true">↓</span>
+          <span class="movement-type-copy"><strong>Entrada</strong><small>Adicionar ao estoque</small></span>
+        </label>
+        <label class="movement-type-option movement-exit">
+          <input type="radio" name="m_tipo" value="SAIDA">
+          <span class="movement-type-icon" aria-hidden="true">↑</span>
+          <span class="movement-type-copy"><strong>Saída</strong><small>Remover do estoque</small></span>
+        </label>
+        <label class="movement-type-option movement-sale">
+          <input type="radio" name="m_tipo" value="VENDA">
+          <span class="movement-type-icon" aria-hidden="true">$</span>
+          <span class="movement-type-copy"><strong>Venda</strong><small>Registrar uma venda</small></span>
+        </label>
       </div>
+    </fieldset>
+
+    <div class="movement-fields">
       <div>
         <label>Quantidade</label>
-        <input id="m_qtd" type="number" value="1" min="1" step="1">
+        <input id="m_qtd" type="number" min="0.001" step="0.001">
       </div>
     </div>
 
     <label>Motivo / Observação</label>
-    <input id="m_motivo" type="text" placeholder="Ex: Venda no balcão, quebra, reposição">
+    <input id="m_motivo" type="text">
 
     <div class="err" id="movimentacaoErr" style="margin-top:10px;"></div>
 
@@ -135,15 +151,14 @@
 <div class="modal-bg" id="feedbackModalBg">
   <div class="modal">
     <h2>Opinião do Cliente</h2>
-    <div class="note">O que o cliente achou do preço deste produto?</div>
     
     <input type="hidden" id="f_fb_produto_id">
     
-    <label>Nome do Cliente (Opcional)</label>
-    <input id="f_fb_cliente" type="text" placeholder="Ex: Sr. João">
+    <label>Nome do Cliente</label>
+    <input id="f_fb_cliente" type="text">
     
     <label>Comentário / Opinião</label>
-    <input id="f_fb_comentario" type="text" placeholder="Ex: Achou muito caro face ao supermercado ao lado">
+    <input id="f_fb_comentario" type="text">
     
     <div class="err" id="feedbackErr" style="margin-top:10px;"></div>
     

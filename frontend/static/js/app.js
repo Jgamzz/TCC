@@ -208,7 +208,7 @@ function renderDashboard(title) {
       const est = estoqueInfo(p.estoque);
       return `<tr><td>${p.nome}</td><td><div class="bar"><div style="width:${est.pct}%;background:${est.color}"></div></div><div class="qty">${p.estoque} un.</div></td>
         <td style="color:${est.color}; font-weight:600;">${p.estoque <= 5 ? 'Crítico' : p.estoque <= 20 ? 'Baixo' : 'Saudável'}</td>
-        <td><button class="btn btn-verde" onclick="abrirMovimentacaoRapida(${p.id_produto}, 'VENDA')">Registrar Movimentação</button></td></tr>`;
+        <td><button class="btn btn-verde" onclick="abrirMovimentacaoRapida(${p.id_produto})">Registrar Movimentação</button></td></tr>`;
     }).join('');
   } else if (currentPage === 'validade') {
     list.sort((a, b) => validadeInfo(a.data_validade).cls === 'valido' ? 1 : -1);

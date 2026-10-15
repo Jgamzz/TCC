@@ -25,7 +25,7 @@ def buscar_por_id(id_estoque):
 
 
 @estoque_bp.post("/")
-@verificar_permissao(["GERENTE", "ADMIN"])
+@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def cadastrar():
     """
     Registra uma movimentação e atualiza o saldo do produto.

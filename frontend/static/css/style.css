@@ -57,6 +57,25 @@ button.btn{border:none;border-radius:6px;padding:7px 14px;font-size:13px;font-we
 .modal h2{margin:0 0 16px;font-size:17px;}
 .modal label{display:block;font-size:13px;margin:10px 0 4px;color:var(--cinza);}
 .modal input{width:100%;padding:8px 10px;border:1px solid var(--borda);border-radius:6px;font-size:14px;}
+.modal:has(.movement-type-fieldset){width:min(480px,calc(100vw - 32px));}
+.movement-product{display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:#f8fafc;border:1px solid var(--borda);border-radius:8px;}
+.movement-product-label{font-size:12px;color:var(--cinza);}
+.movement-product strong{font-size:15px;color:var(--texto);}
+.movement-product span:last-child{font-size:12px;color:var(--cinza);}
+.movement-type-fieldset{padding:0;border:0;margin:14px 0 8px;}
+.movement-type-fieldset legend{font-size:13px;margin-bottom:8px;color:var(--cinza);}
+.movement-type-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+.modal .movement-type-option{display:flex;align-items:center;gap:8px;min-width:0;margin:0;padding:10px 8px;border:1px solid var(--borda);border-radius:8px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;}
+.modal .movement-type-option:has(input:checked){border-color:var(--verde-medio);background:var(--verde-claro);box-shadow:0 0 0 1px var(--verde-medio);}
+.modal .movement-type-option input[type="radio"]{width:16px;height:16px;flex:0 0 16px;margin:0;padding:0;accent-color:var(--verde-medio);}
+.movement-type-icon{display:flex;flex:0 0 26px;width:26px;height:26px;align-items:center;justify-content:center;border-radius:50%;font-size:17px;font-weight:700;background:#e6f7ec;color:#15803d;}
+.movement-exit .movement-type-icon{background:var(--laranja-bg);color:var(--laranja);}
+.movement-sale .movement-type-icon{background:#eaf1ff;color:var(--azul-escuro);font-size:14px;}
+.movement-type-copy{display:flex;min-width:0;flex-direction:column;gap:2px;}
+.movement-type-copy strong{font-size:12px;color:var(--texto);}
+.movement-type-copy small{font-size:10px;line-height:1.2;color:var(--cinza);}
+.movement-fields{display:grid;grid-template-columns:1fr;gap:10px;}
+.movement-fields input{width:100%;}
 .modal input[type="number"]::-webkit-inner-spin-button,
 .modal input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
 .modal input[type="number"]{-moz-appearance:textfield;appearance:textfield;}

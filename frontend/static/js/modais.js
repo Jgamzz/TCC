@@ -87,12 +87,21 @@ async function deleteProduto(id){
 }
 
 // --- MOVIMENTAÇÃO DE ESTOQUE (Entrada, Saída e Venda) ---
-function openMovimentacaoModal(){
-  const select = document.getElementById('m_produto');
-  select.innerHTML = produtos.map(p => `<option value="${p.id || p.id_produto}">${p.nome} (Estoque: ${p.estoque})</option>`).join('');
-  if (select.options.length === 0) select.innerHTML = '<option value="">Nenhum produto cadastrado</option>';
+function openMovimentacaoModal(idProduto, tipoInicial = ''){
+  const produto = produtos.find(p => String(p.id_produto) === String(idProduto))
+    || produtos[0];
+  if (!produto) {
+    showToast('Cadastre um produto antes de movimentar o estoque.', 'error');
+    return;
+  }
 
-  document.getElementById('m_qtd').value = 1;
+  document.getElementById('m_produto').value = produto.id_produto;
+  document.getElementById('m_produto_nome').textContent = produto.nome;
+  document.getElementById('m_produto_estoque').textContent = `Estoque atual: ${produto.estoque} un.`;
+  document.querySelectorAll('input[name="m_tipo"]').forEach((opcao) => {
+    opcao.checked = opcao.value === tipoInicial;
+  });
+  document.getElementById('m_qtd').value = '';
   document.getElementById('m_motivo').value = '';
   document.getElementById('movimentacaoErr').textContent = '';
   document.getElementById('movimentacaoModalBg').classList.add('shown');
@@ -101,64 +110,44 @@ function openMovimentacaoModal(){
 function closeMovimentacaoModal(){ document.getElementById('movimentacaoModalBg').classList.remove('shown'); }
 
 function abrirMovimentacaoRapida(idProduto, tipoStr) {
-  openMovimentacaoModal();
-  setTimeout(() => {
-      document.getElementById('m_produto').value = idProduto;
-      document.getElementById('m_tipo').value = tipoStr || 'VENDA';
-  }, 100);
-}
-
-function aplicarMovimentacaoLocal(idProduto, quantidade, tipo, motivo) {
-  const produto = produtos.find(p => (p.id || p.id_produto) === idProduto);
-  if (!produto) return 'Produto não encontrado.';
-  if (tipo === 'SAIDA' && produto.estoque < quantidade) return 'Estoque insuficiente para esta saída.';
-
-  produto.estoque += tipo === 'ENTRADA' ? quantidade : -quantidade;
-  try {
-    const historico = JSON.parse(localStorage.getItem('sgb_varejo_movimentacoes_locais') || '[]');
-    historico.push({
-      id_produto: idProduto,
-      produto: produto.nome,
-      tipo,
-      quantidade,
-      motivo,
-      data: new Date().toISOString()
-    });
-    localStorage.setItem('sgb_varejo_movimentacoes_locais', JSON.stringify(historico));
-  } catch(e) {}
-  return null;
+  openMovimentacaoModal(idProduto, tipoStr || '');
 }
 
 async function registrarMovimentacao() {
   const dadosOp = {
       id_produto: parseInt(document.getElementById('m_produto').value),
-      quantidade: parseInt(document.getElementById('m_qtd').value)
+      quantidade: Number(document.getElementById('m_qtd').value)
   };
-  const tipo = document.getElementById('m_tipo').value;
+  const tipo = document.querySelector('input[name="m_tipo"]:checked')?.value;
   const motivo = document.getElementById('m_motivo').value.trim();
 
-  if (!dadosOp.id_produto || isNaN(dadosOp.quantidade) || dadosOp.quantidade <= 0) {
-      return document.getElementById('movimentacaoErr').textContent = 'Quantidade inválida.';
+  if (!dadosOp.id_produto || !Number.isFinite(dadosOp.quantidade) || dadosOp.quantidade <= 0) {
+      return document.getElementById('movimentacaoErr').textContent = 'Informe uma quantidade válida.';
   }
-  if (!motivo) {
+  if (!tipo) {
+      return document.getElementById('movimentacaoErr').textContent = 'Selecione o tipo de operação.';
+  }
+  if (tipo !== 'VENDA' && !motivo) {
       return document.getElementById('movimentacaoErr').textContent = 'O motivo é obrigatório.';
   }
 
   try {
       if (tipo === 'VENDA') {
           await api('/vendas', { method: 'POST', body: JSON.stringify(dadosOp) });
-        showToast('Venda registrada com sucesso!');
-        closeMovimentacaoModal();
-        await refreshProdutos();
+          showToast('Venda registrada com sucesso!');
       } else {
-        const erroLocal = aplicarMovimentacaoLocal(dadosOp.id_produto, dadosOp.quantidade, tipo, motivo);
-        if (erroLocal) {
-        document.getElementById('movimentacaoErr').textContent = erroLocal;
-        return;
-        }
-        showToast('Movimentação atualizada apenas neste navegador. Integração com o servidor pendente.');
-        closeMovimentacaoModal();
+          await api('/estoque/', {
+            method: 'POST',
+            body: JSON.stringify({
+              ...dadosOp,
+              tipo_operacao: tipo,
+              motivo
+            })
+          });
+          showToast('Movimentação registrada com sucesso!');
       }
+      closeMovimentacaoModal();
+      await refreshProdutos();
       render();
   } catch(e) { document.getElementById('movimentacaoErr').textContent = 'Erro: ' + e.message; }
 }
