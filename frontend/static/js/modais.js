@@ -19,26 +19,15 @@ function showToast(message, type = 'success') {
   }, 3500);
 }
 
-const CONFIGURACOES_STORAGE_KEY = 'sgb_varejo_configuracoes';
-const CONFIGURACOES_PADRAO = {
-  margem_minima: 15,
-  dias_validade: 7,
-  limiar_giro: 10
-};
-
-function carregarConfiguracoesLocais() {
-  let configuracoes = CONFIGURACOES_PADRAO;
+async function carregarConfiguracoesRemotas() {
   try {
-    configuracoes = Object.assign(
-      {},
-      CONFIGURACOES_PADRAO,
-      JSON.parse(localStorage.getItem(CONFIGURACOES_STORAGE_KEY)) || {}
-    );
-  } catch(e) {}
-
-  document.getElementById('cfg_margem').value = configuracoes.margem_minima;
-  document.getElementById('cfg_dias_validade').value = configuracoes.dias_validade;
-  document.getElementById('cfg_limiar_giro').value = configuracoes.limiar_giro;
+    const configuracoes = await api('/configuracoes');
+    document.getElementById('cfg_margem').value = configuracoes.margem_minima;
+    document.getElementById('cfg_dias_validade').value = configuracoes.dias_validade;
+    document.getElementById('cfg_limiar_giro').value = configuracoes.limiar_giro;
+  } catch (error) {
+    showToast('Não foi possível carregar as configurações: ' + error.message, 'error');
+  }
 }
 
 // --- PRODUTOS ---
@@ -48,11 +37,15 @@ function openProdutoModal(id){
   const bg = document.getElementById('produtoModalBg');
   if (id === null) {
 		document.getElementById('produtoModalTitle').textContent = 'Registar produto';
-		['f_nome', 'f_custo', 'f_preco', 'f_estoque', 'f_validade'].forEach(fid => document.getElementById(fid).value = '');
+		['f_codigo', 'f_nome', 'f_descricao', 'f_categoria', 'f_fornecedor', 'f_custo', 'f_preco', 'f_estoque', 'f_validade'].forEach(fid => document.getElementById(fid).value = '');
   } else {
 		const p = produtos.find(x => x.id_produto === id || x.id === id);
 		document.getElementById('produtoModalTitle').textContent = 'Alterar produto';
 		document.getElementById('f_nome').value = p.nome;
+		document.getElementById('f_codigo').value = p.codigo || '';
+		document.getElementById('f_descricao').value = p.descricao || '';
+		document.getElementById('f_categoria').value = p.categoria || '';
+		document.getElementById('f_fornecedor').value = p.fornecedor || '';
 		document.getElementById('f_custo').value = p.custo;
 		document.getElementById('f_preco').value = p.preco_atual;
 		document.getElementById('f_estoque').value = p.estoque;
@@ -64,7 +57,11 @@ function closeProdutoModal(){ document.getElementById('produtoModalBg').classLis
 
 async function saveProduto(){
   const dados = {
+		codigo: document.getElementById('f_codigo').value.trim() || null,
 		nome: document.getElementById('f_nome').value.trim(),
+		descricao: document.getElementById('f_descricao').value.trim() || null,
+		categoria: document.getElementById('f_categoria').value.trim() || null,
+		fornecedor: document.getElementById('f_fornecedor').value.trim() || null,
 		custo: parseFloat(document.getElementById('f_custo').value),
 		preco_atual: parseFloat(document.getElementById('f_preco').value),
 		estoque: parseInt(document.getElementById('f_estoque').value || 0),
@@ -188,13 +185,18 @@ async function salvarSugestaoEditada() {
 function abrirModalConcorrencia(idProduto) {
   document.getElementById('c_produto_id').value = idProduto;
   document.getElementById('c_valor').value = '';
+  document.getElementById('c_nome').value = '';
   document.getElementById('concorrenciaModalBg').classList.add('shown');
 }
 function closeConcorrenciaModal() { document.getElementById('concorrenciaModalBg').classList.remove('shown'); }
 
 async function salvarConcorrencia() {
-  const dados = { id_produto: parseInt(document.getElementById('c_produto_id').value), valor: parseFloat(document.getElementById('c_valor').value) };
-  if (!dados.id_produto || isNaN(dados.valor) || dados.valor <= 0) return showToast('Insira um valor válido.', 'error');
+  const dados = {
+    id_produto: parseInt(document.getElementById('c_produto_id').value),
+    valor: parseFloat(document.getElementById('c_valor').value),
+    concorrente: document.getElementById('c_nome').value.trim()
+  };
+  if (!dados.id_produto || isNaN(dados.valor) || dados.valor <= 0 || !dados.concorrente) return showToast('Informe o concorrente e um valor válido.', 'error');
   try {
 		await api('/concorrentes', { method: 'POST', body: JSON.stringify(dados) });
 		closeConcorrenciaModal();
@@ -208,6 +210,16 @@ async function pedirSugestaoDesconto(idProduto) {
 		await api('/sugestoes', { method: 'POST', body: JSON.stringify({ id_produto: idProduto }) });
     showToast('Análise concluída! Vá até a aba "Gestão" para aprovar o novo preço.');
   } catch (e) { showToast('Erro: ' + e.message, 'error'); }
+}
+
+async function gerarSugestoesCatalogo() {
+  try {
+    const sugestoes = await api('/sugestoes/lote', { method: 'POST' });
+    showToast(`${sugestoes.length} sugestão(ões) gerada(s).`);
+    await renderGestao();
+  } catch (error) {
+    showToast('Erro ao gerar sugestões: ' + error.message, 'error');
+  }
 }
 async function decidirSugestao(idSugestao, decisaoStr) {
   try {
@@ -227,6 +239,7 @@ function openUsuarioModal(id) {
   if (id === null) {
     document.getElementById('usuarioModalTitle').textContent = 'Adicionar Membro';
     document.getElementById('u_name').value = '';
+    document.getElementById('u_email').value = '';
     document.getElementById('u_username').value = '';
     document.getElementById('u_password').value = '';
     document.getElementById('u_senha_hint').textContent = '(Obrigatório)';
@@ -236,6 +249,7 @@ function openUsuarioModal(id) {
     const u = usuarios.find(x => x.ID === id);
     document.getElementById('usuarioModalTitle').textContent = 'Alterar Membro';
     document.getElementById('u_name').value = u.Name;
+    document.getElementById('u_email').value = u.Email || '';
     document.getElementById('u_username').value = u.Username;
     document.getElementById('u_password').value = '';
     document.getElementById('u_senha_hint').textContent = '(Deixe em branco para manter a senha atual)';
@@ -250,6 +264,7 @@ function closeUsuarioModal() { document.getElementById('usuarioModalBg').classLi
 async function saveUsuario() {
   const dados = {
     Name: document.getElementById('u_name').value.trim(),
+    Email: document.getElementById('u_email').value.trim(),
     Username: document.getElementById('u_username').value.trim(),
     Cargo_ID: parseInt(document.getElementById('u_cargo').value),
     Is_Active: document.getElementById('u_status').value === 'true'
@@ -323,7 +338,7 @@ async function salvarFeedback() {
   }
 }
 
-function salvarConfiguracoes() {
+async function salvarConfiguracoes() {
   const configuracoes = {
     margem_minima: Number(document.getElementById('cfg_margem').value),
     dias_validade: Number(document.getElementById('cfg_dias_validade').value),
@@ -340,6 +355,13 @@ function salvarConfiguracoes() {
     return showToast('O limiar de giro não pode ser negativo.', 'error');
   }
 
-  localStorage.setItem(CONFIGURACOES_STORAGE_KEY, JSON.stringify(configuracoes));
-  showToast('Configurações salvas neste navegador.');
+  try {
+    await api('/configuracoes', {
+      method: 'PUT',
+      body: JSON.stringify(configuracoes)
+    });
+    showToast('Configurações salvas.');
+  } catch (error) {
+    showToast('Erro ao salvar configurações: ' + error.message, 'error');
+  }
 }

@@ -22,10 +22,15 @@ def listar():
       401:
         description: Token ausente ou inválido
     """
+    filtros = {
+        campo: request.args.get(campo, "").strip()
+        for campo in ("nome", "codigo", "categoria", "fornecedor")
+    }
+    filtros["disponivel"] = request.args.get("disponivel")
     return jsonify(
         [
             ProdutoResponseDto.from_model(produto).to_dict()
-            for produto in produto_service.listar()
+            for produto in produto_service.listar(filtros)
         ]
     )
 
@@ -84,7 +89,9 @@ def cadastrar():
         description: Permissão negada
     """
     try:
-        produto = produto_service.criar(request.get_json(silent=True))
+        produto = produto_service.criar(
+            request.get_json(silent=True), usuario_id=request.usuario.id
+        )
         return jsonify(ProdutoResponseDto.from_model(produto).to_dict()), 201
     except ValueError as erro:
         return jsonify({"erro": str(erro)}), 400
@@ -114,7 +121,11 @@ def atualizar(id_produto):
         description: Produto não encontrado
     """
     try:
-        produto = produto_service.atualizar(id_produto, request.get_json(silent=True))
+        produto = produto_service.atualizar(
+            id_produto,
+            request.get_json(silent=True),
+            usuario_id=request.usuario.id,
+        )
     except ValueError as erro:
         return jsonify({"erro": str(erro)}), 400
     if not produto:
@@ -123,10 +134,10 @@ def atualizar(id_produto):
 
 
 @produto_bp.delete("/<int:id_produto>")
-@verificar_permissao(["GERENTE", "ADMIN"])
+@verificar_permissao(["ADMIN"])
 def deletar(id_produto):
     """
-    Exclui um produto. Gerente ou admin.
+    Desativa logicamente um produto. Apenas admin.
     ---
     tags: [Produtos]
     security: [{Bearer: []}]
@@ -141,7 +152,7 @@ def deletar(id_produto):
       404:
         description: Produto não encontrado
     """
-    if not produto_service.excluir(id_produto):
+    if not produto_service.excluir(id_produto, usuario_id=request.usuario.id):
         return jsonify({"erro": "Produto não encontrado"}), 404
     return jsonify({"mensagem": "Produto removido com sucesso"})
 

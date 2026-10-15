@@ -9,6 +9,8 @@ class LoginRequestDto:
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "LoginRequestDto":
+        if not isinstance(data, dict):
+            raise ValueError("Informe Username e Password em um objeto JSON.")
         username = data.get("Username") or data.get("username")
         password = data.get("Password") or data.get("password")
         if not username or not password:

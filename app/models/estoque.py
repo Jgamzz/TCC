@@ -13,6 +13,7 @@ class Estoque(db.Model):
     id_produto = db.Column(
         BIGINT_UNSIGNED, db.ForeignKey("produto.id_produto"), nullable=False
     )
+    usuario_id = db.Column(db.Integer, db.ForeignKey("Usuario.ID"), nullable=True)
     tipo_operacao = db.Column(db.String(10), nullable=False)
     quantidade = db.Column(db.Numeric(12, 3), nullable=False)
     motivo = db.Column(db.Text, nullable=False)
@@ -26,6 +27,7 @@ class Estoque(db.Model):
         return {
             "id_estoque": self.id_estoque,
             "id_produto": self.id_produto,
+            "usuario_id": self.usuario_id,
             "tipo_operacao": self.tipo_operacao,
             "quantidade": float(self.quantidade),
             "motivo": self.motivo,

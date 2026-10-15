@@ -4,7 +4,7 @@ from app import db
 class ConfiguracaoRegras(db.Model):
     __tablename__ = "configuracao_regras"
 
-    id_configuracao = db.Column(db.SmallInteger, primary_key=True, autoincrement=True)
+    id_configuracao = db.Column(db.SmallInteger, primary_key=True, default=1)
     limiar_giro = db.Column(db.Numeric(12, 3), nullable=False)
     dias_validade = db.Column(db.SmallInteger, nullable=False)
     margem_minima = db.Column(db.Numeric(7, 3), nullable=False)

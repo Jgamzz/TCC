@@ -10,3 +10,4 @@ from app.models.sugestao_preco import SugestaoPreco
 from app.models.feedback_cliente import FeedbackCliente
 from app.models.preco_concorrente_planilha import PrecoConcorrentePlanilha
 from app.models.estoque import Estoque
+from app.models.auditoria import Auditoria

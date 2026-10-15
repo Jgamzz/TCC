@@ -25,7 +25,7 @@ def buscar_por_id(id_estoque):
 
 
 @estoque_bp.post("/")
-@verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
+@verificar_permissao(["GERENTE", "ADMIN"])
 def cadastrar():
     """
     Registra uma movimentação e atualiza o saldo do produto.
@@ -52,7 +52,9 @@ def cadastrar():
         description: Dados inválidos ou estoque insuficiente
     """
     try:
-        movimento = estoque_service.criar(request.get_json(silent=True))
+        movimento = estoque_service.criar(
+            request.get_json(silent=True), usuario_id=request.usuario.id
+        )
     except ValueError as erro:
         return jsonify({"erro": str(erro)}), 400
     return jsonify(movimento.to_dict()), 201
@@ -61,29 +63,19 @@ def cadastrar():
 @estoque_bp.put("/<int:id_estoque>")
 @verificar_permissao(["GERENTE", "ADMIN"])
 def atualizar(id_estoque):
-    """Atualiza uma movimentação e recalcula o saldo do produto."""
-    try:
-        movimento = estoque_service.atualizar(
-            id_estoque, request.get_json(silent=True)
-        )
-    except ValueError as erro:
-        return jsonify({"erro": str(erro)}), 400
-    if not movimento:
-        return jsonify({"erro": "Movimentação de estoque não encontrada."}), 404
-    return jsonify(movimento.to_dict())
+    """Movimentações são imutáveis; registre uma movimentação compensatória."""
+    return jsonify(
+        {
+            "erro": "Movimentações não podem ser alteradas. Registre uma movimentação compensatória."
+        }
+    ), 409
 
 
 @estoque_bp.delete("/<int:id_estoque>")
 @verificar_permissao(["GERENTE", "ADMIN"])
 def deletar(id_estoque):
-    """Exclui uma movimentação e reverte seu impacto no saldo."""
-    try:
-        excluido = estoque_service.excluir(id_estoque)
-    except ValueError as erro:
-        return jsonify({"erro": str(erro)}), 400
-    if not excluido:
-        return jsonify({"erro": "Movimentação de estoque não encontrada."}), 404
-    return jsonify({"mensagem": "Movimentação de estoque removida com sucesso."})
+    """Movimentações são imutáveis e não podem ser removidas."""
+    return jsonify({"erro": "Movimentações não podem ser removidas."}), 409
 
 
 class EstoqueController:
