@@ -12,6 +12,7 @@ class PrecoConcorrente(db.Model):
     id_produto = db.Column(
         BIGINT_UNSIGNED, db.ForeignKey("produto.id_produto"), nullable=False
     )
+    concorrente = db.Column(db.String(120), nullable=True)
     valor = db.Column(db.Numeric(12, 2), nullable=False)
     data_registro = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
@@ -19,6 +20,7 @@ class PrecoConcorrente(db.Model):
         return {
             "id_preco_concorrente": self.id_preco_concorrente,
             "id_produto": self.id_produto,
+            "concorrente": self.concorrente,
             "valor": float(self.valor),
             "data_registro": self.data_registro.isoformat(),
         }

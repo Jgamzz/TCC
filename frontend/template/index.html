@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrecificaJá</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div id="loginView">
+  <div class="loginBox">
+    <h1>PrecificaJá</h1>
+    
+    <label style="font-size:13px;color:#6b7280;">Usuário</label>
+    <input id="loginEmail" type="text" oninput="limparErroLogin('usuario')">
+    <div class="login-field-error" id="loginUsuarioErr" aria-live="polite"></div>
+    
+    <label style="font-size:13px;color:#6b7280;margin-top:10px;display:block;">Senha</label>
+    <input id="loginSenha" type="password" oninput="limparErroLogin('senha')">
+    <div class="login-field-error" id="loginSenhaErr" aria-live="polite"></div>
+    
+    <button onclick="doLogin()">Entrar</button>
+    <div class="err" id="loginErr"></div>
+    <button class="login-link" type="button" onclick="solicitarRecuperacao()">Esqueci minha senha</button>
+    <div id="recoveryView" class="recovery-view" hidden>
+      <label id="recoveryEmailLabel" for="recoveryEmail">E-mail cadastrado</label>
+      <input id="recoveryEmail" type="email" autocomplete="email">
+      <button type="button" onclick="enviarRecuperacao()">Enviar instruções</button>
+      <label for="resetPassword" id="resetPasswordLabel" hidden>Nova senha</label>
+      <input id="resetPassword" type="password" autocomplete="new-password" hidden>
+      <button id="resetPasswordButton" type="button" onclick="confirmarRedefinicao()" hidden>Redefinir senha</button>
+      <div class="err" id="recoveryErr"></div>
+    </div>
+  </div>
+</div>
+
+<div id="app">
+  <header>
+    <div class="brand-area">
+      <button id="sidebarToggle" class="sidebar-toggle" type="button" onclick="alternarSidebar()" aria-label="Recolher menu" title="Recolher menu">☰</button>
+      <div class="brand">📈 PrecificaJá</div>
+    </div>
+    <div class="userbox">
+      <div class="avatar" id="avatarLetter">?</div>
+      <span id="userName"></span>
+      <button class="btn btn-outline" style="padding:4px 10px;" onclick="logout()">Sair</button>
+    </div>
+  </header>
+  <nav id="navBar"></nav>
+  <main id="mainView"></main>
+</div>
+
+<!-- Modal: criar/editar produto -->
+<div class="modal-bg" id="produtoModalBg">
+  <div class="modal">
+    <h2 id="produtoModalTitle">Alterar produto</h2>
+    <label>Código</label><input id="f_codigo" maxlength="80">
+    <label>Nome</label><input id="f_nome">
+    <label>Descrição</label><input id="f_descricao">
+    <label>Categoria</label><input id="f_categoria" maxlength="100">
+    <label>Fornecedor</label><input id="f_fornecedor" maxlength="150">
+    <label>Valor Fornecedor</label>
+    <div class="currency-input"><span>R$</span><input id="f_custo" type="number" step="0.01"></div>
+    <label>Valor de venda</label>
+    <div class="currency-input"><span>R$</span><input id="f_preco" type="number" step="0.01"></div>
+    <label>Estoque</label><input id="f_estoque" type="number" step="1">
+    <label>Validade</label><input id="f_validade" type="date">
+    <div class="err" id="produtoErr"></div>
+    <div class="row">
+      <button class="btn btn-outline" onclick="closeProdutoModal()">Cancelar</button>
+      <button class="btn btn-verde" id="produtoSaveBtn" onclick="saveProduto()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Registrar Movimentação de Estoque (UC04) -->
+<div class="modal-bg" id="movimentacaoModalBg">
+  <div class="modal">
+    <h2>Movimentar Estoque</h2>
+    <input id="m_produto" type="hidden">
+    <div class="movement-product">
+      <span class="movement-product-label">Produto selecionado</span>
+      <strong id="m_produto_nome"></strong>
+      <span id="m_produto_estoque"></span>
+    </div>
+
+    <fieldset class="movement-type-fieldset">
+      <legend>Tipo de operação</legend>
+      <div class="movement-type-options">
+        <label class="movement-type-option movement-entry">
+          <input type="radio" name="m_tipo" value="ENTRADA">
+          <span class="movement-type-icon" aria-hidden="true">↓</span>
+          <span class="movement-type-copy"><strong>Entrada</strong><small>Adicionar ao estoque</small></span>
+        </label>
+        <label class="movement-type-option movement-exit">
+          <input type="radio" name="m_tipo" value="SAIDA">
+          <span class="movement-type-icon" aria-hidden="true">↑</span>
+          <span class="movement-type-copy"><strong>Saída</strong><small>Remover do estoque</small></span>
+        </label>
+        <label class="movement-type-option movement-sale">
+          <input type="radio" name="m_tipo" value="VENDA">
+          <span class="movement-type-icon" aria-hidden="true">$</span>
+          <span class="movement-type-copy"><strong>Venda</strong><small>Registrar uma venda</small></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="movement-fields">
+      <div>
+        <label>Quantidade</label>
+        <input id="m_qtd" type="number" min="0.001" step="0.001">
+      </div>
+    </div>
+
+    <label>Motivo / Observação</label>
+    <input id="m_motivo" type="text">
+
+    <div class="err" id="movimentacaoErr" style="margin-top:10px;"></div>
+
+    <div class="row">
+      <button class="btn btn-outline" onclick="closeMovimentacaoModal()">Cancelar</button>
+      <button class="btn btn-verde" onclick="registrarMovimentacao()">Registrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Editar Sugestão de Preço (UC09) -->
+<div class="modal-bg" id="editSugestaoModalBg">
+  <div class="modal">
+    <h2>Editar Sugestão de Preço</h2>
+    <div class="note">Ajuste o valor antes de aprovar.</div>
+    <input type="hidden" id="es_id_sugestao">
+
+    <label>Novo Preço Sugerido (R$)</label>
+    <input id="es_preco" type="number" step="0.01">
+
+    <label>Motivo da Edição</label>
+    <input id="es_motivo" type="text" placeholder="Ex: Arredondamento para facilitar o troco">
+
+    <div class="row">
+      <button class="btn btn-outline" onclick="closeEditSugestaoModal()">Cancelar</button>
+      <button class="btn btn-azul" onclick="salvarSugestaoEditada()">Salvar e Aprovar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Registrar Preço Concorrente -->
+<div class="modal-bg" id="concorrenciaModalBg">
+  <div class="modal">
+    <h2>Registrar Preço da Concorrência</h2>
+    <label>Produto</label>
+    <input type="hidden" id="c_produto_id">
+    <label>Valor na Concorrência (R$)</label>
+    <input id="c_valor" type="number" step="0.01" min="0.01">
+    <label>Nome do Concorrente</label>
+    <input id="c_nome" type="text" maxlength="120">
+    <div class="row">
+      <button class="btn btn-outline" onclick="closeConcorrenciaModal()">Cancelar</button>
+      <button class="btn btn-verde" onclick="salvarConcorrencia()">Registrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Registrar Feedback do Cliente -->
+<div class="modal-bg" id="feedbackModalBg">
+  <div class="modal">
+    <h2>Opinião do Cliente</h2>
+    
+    <input type="hidden" id="f_fb_produto_id">
+    
+    <label>Nome do Cliente</label>
+    <input id="f_fb_cliente" type="text">
+    
+    <label>Comentário / Opinião</label>
+    <input id="f_fb_comentario" type="text">
+    
+    <div class="err" id="feedbackErr" style="margin-top:10px;"></div>
+    
+    <div class="row">
+      <button class="btn btn-outline" onclick="closeFeedbackModal()">Cancelar</button>
+      <button class="btn btn-verde" onclick="salvarFeedback()">Registrar Feedback</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Gerir Usuário -->
+<div class="modal-bg" id="usuarioModalBg">
+  <div class="modal">
+    <h2 id="usuarioModalTitle">Adicionar Membro</h2>
+    
+    <label>Nome Completo</label>
+    <input id="u_name" type="text" placeholder="Ex: Bernardo Silva">
+    <label>E-mail para recuperação de senha</label>
+    <input id="u_email" type="email" autocomplete="email">
+    
+    <label>Nome de Usuário (Login)</label>
+    <input id="u_username" type="text" placeholder="Ex: bernardo.s">
+    
+    <label>Senha <span id="u_senha_hint" class="muted"></span></label>
+    <input id="u_password" type="password" placeholder="***">
+    
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+      <div>
+        <label>Cargo</label>
+        <select id="u_cargo">
+          <option value="1">Admin</option>
+          <option value="2">Gerente</option>
+          <option value="3">Usuário</option>
+        </select>
+      </div>
+      <div>
+        <label>Status</label>
+        <select id="u_status">
+          <option value="true">Ativo</option>
+          <option value="false">Inativo</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="err" id="usuarioErr"></div>
+    <div class="row">
+      <button class="btn btn-outline" onclick="closeUsuarioModal()">Cancelar</button>
+      <button class="btn btn-verde" onclick="saveUsuario()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/api.js"></script>
+<script src="/static/js/modais.js"></script>
+<script src="/static/js/app.js"></script>
+
+
+</body>
+</html>

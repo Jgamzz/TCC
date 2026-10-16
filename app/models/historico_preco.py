@@ -12,6 +12,7 @@ class HistoricoPreco(db.Model):
     id_produto = db.Column(
         BIGINT_UNSIGNED, db.ForeignKey("produto.id_produto"), nullable=False
     )
+    usuario_id = db.Column(db.Integer, db.ForeignKey("Usuario.ID"), nullable=True)
     preco_antigo = db.Column(db.Numeric(12, 2), nullable=False)
     preco_novo = db.Column(db.Numeric(12, 2), nullable=False)
     data_alteracao = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
@@ -21,8 +22,10 @@ class HistoricoPreco(db.Model):
         return {
             "id_historico": self.id_historico,
             "id_produto": self.id_produto,
+            "usuario_id": self.usuario_id,
             "preco_antigo": float(self.preco_antigo),
             "preco_novo": float(self.preco_novo),
             "data_alteracao": self.data_alteracao.isoformat(),
             "motivo": self.motivo,
+            "usuario_id": self.usuario_id,
         }

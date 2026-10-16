@@ -2,24 +2,45 @@
 
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from alembic.autogenerate import produce_migrations
 from alembic.migration import MigrationContext
 from alembic.operations import Operations
-from sqlalchemy import create_engine, inspect, insert, select, text, update
+from sqlalchemy import (
+    Column,
+    DateTime,
+    Integer,
+    SmallInteger,
+    String,
+    create_engine,
+    inspect,
+    insert,
+    select,
+    text,
+    update,
+)
 from sqlalchemy.engine import URL
+from werkzeug.security import generate_password_hash
 
 from app import db
 from app.models.cargo import Cargo
+from app.models.configuracao_regras import ConfiguracaoRegras
 from app.models.usuario import Usuario
 
 
 def _create_database_if_needed(app: Any) -> None:
     """Cria o database MySQL antes de o SQLAlchemy abrir a conexão principal."""
     uri = app.config["SQLALCHEMY_DATABASE_URI"]
-    if not uri.startswith("mysql"):
+    if not str(uri).startswith("mysql"):
         return
+
+    if not app.config.get("DB_PASSWORD"):
+        raise RuntimeError(
+            "DB_PASSWORD não está definida. Configure a senha do MySQL "
+            "no ambiente antes de iniciar a aplicação."
+        )
 
     server_url = URL.create(
         drivername="mysql+pymysql",
@@ -56,6 +77,53 @@ def _include_object(
     if object_type == "column" and reflected and compare_to is None:
         return False
     return True
+
+
+def _ensure_user_auth_columns(connection: Any) -> None:
+    """Adiciona colunas de autenticação ausentes em tabelas Usuario legadas."""
+    tables = {name.lower(): name for name in inspect(connection).get_table_names()}
+    table_name = tables.get(Usuario.__tablename__.lower())
+    if table_name is None:
+        return
+
+    existing_columns = {
+        column["name"].lower()
+        for column in inspect(connection).get_columns(table_name)
+    }
+    additions = (
+        Column("Email", String(254), nullable=True),
+        Column(
+            "failed_login_attempts",
+            SmallInteger,
+            nullable=False,
+            server_default="0",
+        ),
+        Column("locked_until", DateTime, nullable=True),
+        Column("password_reset_requested_at", DateTime, nullable=True),
+    )
+    operations = Operations(MigrationContext.configure(connection))
+    for column in additions:
+        if column.name.lower() not in existing_columns:
+            operations.add_column(table_name, column)
+
+
+def _ensure_stock_user_column(connection: Any) -> None:
+    """Adiciona o responsável por movimentações em tabelas Estoque legadas."""
+    tables = {name.lower(): name for name in inspect(connection).get_table_names()}
+    table_name = tables.get("estoque")
+    if table_name is None:
+        return
+
+    existing_columns = {
+        column["name"].lower()
+        for column in inspect(connection).get_columns(table_name)
+    }
+    if "usuario_id" not in existing_columns:
+        operations = Operations(MigrationContext.configure(connection))
+        operations.add_column(
+            table_name,
+            Column("usuario_id", Integer, nullable=True),
+        )
 
 
 def _apply_operations(
@@ -123,63 +191,56 @@ def _seed_default_roles(connection: Any) -> None:
             )
 
 
-def _seed_default_users(connection: Any) -> None:
-    """Insere os usuários iniciais somente quando ID e username ainda não existem."""
-    users = (
-        {
-            "id": 1,
-            "name": "Kau\u00e3",
-            "username": "Kau\u00e3",
-            "password": "Senha123",
-            "cargo_id": 3,
-        },
-        {
-            "id": 2,
-            "name": "Tanaka",
-            "username": "Tanaka",
-            "password": "Senha123",
-            "cargo_id": 2,
-        },
-        {
-            "id": 3,
-            "name": "Bernardo",
-            "username": "Bernardo",
-            "password": "Senha123",
-            "cargo_id": 1,
-        },
-    )
+def _migrate_legacy_passwords(connection: Any) -> None:
+    """Converte senhas legadas em texto puro para hashes com salt."""
     table = Usuario.__table__
-    id_column = table.c["ID"]
-    username_column = table.c["Username"]
-
-    for user in users:
-        existing = connection.execute(
-            select(id_column).where(
-                (id_column == user["id"]) | (username_column == user["username"])
-            )
-        ).first()
-        if existing is None:
-            connection.execute(
-                insert(table).values(
-                    ID=user["id"],
-                    Name=user["name"],
-                    Username=user["username"],
-                    Password=user["password"],
-                    Is_Active=True,
-                    Cargo_ID=user["cargo_id"],
-                )
-            )
-        else:
+    password_column = table.c["Password"]
+    rows = connection.execute(select(table.c["ID"], password_column)).all()
+    for user_id, password in rows:
+        if password and not password.startswith(("pbkdf2:", "scrypt:")):
             connection.execute(
                 update(table)
-                .where(
-                    (id_column == user["id"]) | (username_column == user["username"])
-                )
-                .values(
-                    Password=user["password"],
-                    Cargo_ID=user["cargo_id"],
-                )
+                .where(table.c["ID"] == user_id)
+                .values(Password=generate_password_hash(password, method="scrypt"))
             )
+
+
+def _seed_initial_admin(connection: Any) -> None:
+    """Cria o primeiro administrador somente com credenciais fornecidas no ambiente."""
+    username = os.getenv("INITIAL_ADMIN_USERNAME")
+    password = os.getenv("INITIAL_ADMIN_PASSWORD")
+    name = os.getenv("INITIAL_ADMIN_NAME")
+    if not username or not password or not name:
+        return
+    table = Usuario.__table__
+    exists = connection.execute(
+        select(table.c["ID"]).where(table.c["Cargo_ID"] == 1)
+    ).first()
+    if exists:
+        return
+    connection.execute(
+        insert(table).values(
+            Name=name.strip(),
+            Username=username.strip(),
+            Password=generate_password_hash(password, method="scrypt"),
+            Is_Active=True,
+            Cargo_ID=1,
+        )
+    )
+
+
+def _seed_default_configuration(connection: Any) -> None:
+    table = ConfiguracaoRegras.__table__
+    if connection.execute(select(table.c.id_configuracao).limit(1)).first():
+        return
+    connection.execute(
+        insert(table).values(
+            id_configuracao=1,
+            limiar_giro=10,
+            dias_validade=7,
+            margem_minima=15,
+        )
+    )
 
 
 def migrate_database(app: Any) -> None:
@@ -190,6 +251,8 @@ def migrate_database(app: Any) -> None:
     db.create_all()
 
     with db.engine.begin() as connection:
+        _ensure_user_auth_columns(connection)
+        _ensure_stock_user_column(connection)
         context = MigrationContext.configure(
             connection,
             opts={
@@ -207,4 +270,6 @@ def migrate_database(app: Any) -> None:
             )
         _seed_default_roles(connection)
         _rename_roles(connection)
-        _seed_default_users(connection)
+        _migrate_legacy_passwords(connection)
+        _seed_initial_admin(connection)
+        _seed_default_configuration(connection)

@@ -12,6 +12,7 @@ class Venda(db.Model):
     )
     data_venda = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     quantidade = db.Column(db.Numeric(12, 3), nullable=False)
+    preco_unitario = db.Column(db.Numeric(12, 2), nullable=True)
 
     def to_dict(self):
         return {
@@ -19,4 +20,7 @@ class Venda(db.Model):
             "id_produto": self.id_produto,
             "data_venda": self.data_venda.isoformat(),
             "quantidade": float(self.quantidade),
+            "preco_unitario": (
+                float(self.preco_unitario) if self.preco_unitario is not None else None
+            ),
         }

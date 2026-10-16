@@ -4,3 +4,5 @@ alembic
 flasgger
 PyMySQL
 Flask-JWT-Extended
+Werkzeug
+openpyxl

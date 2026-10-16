@@ -88,7 +88,7 @@ def cadastrar():
     """
     dados = request.get_json()
     try:
-        novo_usuario = UsuarioService.criar_usuario(dados)
+        novo_usuario = UsuarioService.criar_usuario(dados, ator_id=request.usuario.id)
         return jsonify(novo_usuario.to_dict()), 201
     except ValueError as ve:
         return jsonify({"erro": str(ve)}), 400
@@ -138,7 +138,9 @@ def atualizar(id_usuario):
     """
     dados = request.get_json()
     try:
-        usuario = UsuarioService.atualizar_usuario(id_usuario, dados)
+        usuario = UsuarioService.atualizar_usuario(
+            id_usuario, dados, ator_id=request.usuario.id
+        )
         if not usuario:
             return jsonify({"erro": "Usuário não encontrado"}), 404
         return jsonify(usuario.to_dict()), 200
@@ -165,7 +167,7 @@ def deletar(id_usuario):
       404:
         description: Usuário não encontrado
     """
-    sucesso = UsuarioService.deletar_usuario(id_usuario)
+    sucesso = UsuarioService.deletar_usuario(id_usuario, ator_id=request.usuario.id)
     if not sucesso:
         return jsonify({"erro": "Usuário não encontrado"}), 404
     return jsonify({"mensagem": f"Usuário {id_usuario} removido com sucesso"}), 200
