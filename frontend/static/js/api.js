@@ -51,7 +51,11 @@ async function restaurarSessao() {
 async function api(path, opts={}) {
     const headers = Object.assign({'Content-Type':'application/json'}, opts.headers||{});
     if (accessToken) headers.Authorization = 'Bearer ' + accessToken;
-    const res = await fetch(API_BASE + path, Object.assign({}, opts, {headers}));
+    const requestOptions = Object.assign({}, opts, {headers});
+    if (!requestOptions.method || requestOptions.method.toUpperCase() === 'GET') {
+        requestOptions.cache = 'no-store';
+    }
+    const res = await fetch(API_BASE + path, requestOptions);
     let body = null;
     try { body = await res.json(); } catch(e){}
     if (!res.ok) {

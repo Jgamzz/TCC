@@ -27,10 +27,11 @@ _load_local_env()
 class Config:
     BASE_DIR = Path(__file__).resolve().parent.parent
     PLANILHAS_CONCORRENTES_DIR = BASE_DIR / "database" / "concorrentes"
+    PRODUTOS_FILE = BASE_DIR / "database" / "produtos" / "produtos.xlsx"
 
     # Configure as credenciais do MySQL por variáveis de ambiente.
     DB_USER = os.getenv("DB_USER", "root")
-    DB_PASSWORD = os.getenv("DB_PASSWORD", "")
+    DB_PASSWORD = os.getenv("DB_PASSWORD", "a547kira")
     DB_HOST = os.getenv("DB_HOST", "localhost")
     DB_PORT = os.getenv("DB_PORT", "3306")
     DB_NAME = os.getenv("DB_NAME", "sgb_varejo")

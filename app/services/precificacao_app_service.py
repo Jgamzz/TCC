@@ -132,6 +132,14 @@ class PrecificacaoAppService:
         if not produto:
             raise ValueError("Produto não encontrado.")
 
+        sugestao_pendente = (
+            SugestaoPreco.query.filter_by(id_produto=id_produto, status="PENDENTE")
+            .order_by(SugestaoPreco.data_criacao.desc())
+            .first()
+        )
+        if sugestao_pendente:
+            return sugestao_pendente
+
         giro = Decimal(str(self.vendas.total_vendido(id_produto, 30)))
         concorrente = self.concorrentes.ultimo_por_produto(id_produto)
         preco_concorrente = Decimal(str(concorrente.valor)) if concorrente else None
@@ -170,6 +178,18 @@ class PrecificacaoAppService:
         produtos = self.produtos.listar()
         if len(produtos) > 500:
             raise ValueError("A geração em lote aceita até 500 produtos ativos.")
+        if not produtos:
+            return []
+        pendentes = {
+            id_produto
+            for (id_produto,) in db.session.query(SugestaoPreco.id_produto)
+            .filter(
+                SugestaoPreco.status == "PENDENTE",
+                SugestaoPreco.id_produto.in_([produto.id_produto for produto in produtos]),
+            )
+            .all()
+        }
+        produtos = [produto for produto in produtos if produto.id_produto not in pendentes]
         if not produtos:
             return []
         configuracao = self.obter_configuracao()
