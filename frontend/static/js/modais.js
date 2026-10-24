@@ -204,12 +204,61 @@ async function salvarConcorrencia() {
   } catch(e) { showToast('Erro: ' + e.message, 'error'); }
 }
 
+function abrirModalProdutoPlanilhaConcorrente() {
+  const arquivos = window.arquivosConcorrencia || [];
+  if (!arquivos.length) return showToast('Nenhuma planilha de concorrente foi encontrada.', 'error');
+  document.getElementById('pc_nome_produto').value = '';
+  document.getElementById('pc_precos').innerHTML = arquivos.map((arquivo) => `
+    <label>${escaparHtml(arquivo.replace(/\.(xlsx|xlsm)$/i, ''))} (R$)</label>
+    <input class="pc_preco" data-arquivo="${escaparHtml(arquivo)}" type="number" min="0" step="0.01" placeholder="Deixe vazio para não informar">
+  `).join('');
+  document.getElementById('produtoPlanilhaConcorrenteModalBg').classList.add('shown');
+}
+
+function fecharModalProdutoPlanilhaConcorrente() {
+  document.getElementById('produtoPlanilhaConcorrenteModalBg').classList.remove('shown');
+}
+
+async function salvarProdutoPlanilhaConcorrente() {
+  const nome_produto = document.getElementById('pc_nome_produto').value.trim();
+  const precos = {};
+  document.querySelectorAll('.pc_preco').forEach((input) => {
+    if (input.value !== '') precos[input.dataset.arquivo] = parseFloat(input.value);
+  });
+  if (!nome_produto || !Object.keys(precos).length) {
+    return showToast('Informe o produto e ao menos um preço.', 'error');
+  }
+  try {
+    await api('/concorrentes/planilhas', {
+      method: 'POST',
+      body: JSON.stringify({ nome_produto, precos }),
+    });
+    fecharModalProdutoPlanilhaConcorrente();
+    showToast('Produto adicionado às planilhas.');
+    await renderConcorrenciaPlanilhas();
+  } catch (error) {
+    showToast('Erro: ' + error.message, 'error');
+  }
+}
+
 // --- SUGESTÕES ---
-async function pedirSugestaoDesconto(idProduto) {
+async function pedirSugestaoDesconto(idProduto, botao) {
+  if (botao?.disabled) return;
+  if (botao) {
+    botao.disabled = true;
+    botao.textContent = 'Processando...';
+  }
   try {
 		await api('/sugestoes', { method: 'POST', body: JSON.stringify({ id_produto: idProduto }) });
-    showToast('Análise concluída! Vá até a aba "Gestão" para aprovar o novo preço.');
-  } catch (e) { showToast('Erro: ' + e.message, 'error'); }
+    if (botao) botao.textContent = 'Sugestão pendente';
+    showToast('Análise concluída! A sugestão já está pendente na aba "Gestão".');
+  } catch (e) {
+    if (botao) {
+      botao.disabled = false;
+      botao.textContent = 'Analisar desconto';
+    }
+    showToast('Erro: ' + e.message, 'error');
+  }
 }
 
 async function gerarSugestoesCatalogo() {

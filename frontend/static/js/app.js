@@ -14,6 +14,13 @@ function validadeInfo(dateStr) {
 function margem(p) {
     return p.custo > 0 ? ((p.preco_atual - p.custo) / p.custo) * 100 : 0;
 }
+function normalizarBusca(valor) {
+  return String(valor || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
 
 function buildNav() {
   const items = [
@@ -253,7 +260,7 @@ function renderDashboard(title) {
     list.sort((a, b) => validadeInfo(a.data_validade).cls === 'valido' ? 1 : -1);
     cards = list.map(p => {
       const val = validadeInfo(p.data_validade);
-      const btnPromocao = (val.cls !== 'valido' && canEdit) ? `<button class="btn btn-feedback" onclick="pedirSugestaoDesconto(${p.id_produto})">Analisar desconto</button>` : '';
+      const btnPromocao = (val.cls !== 'valido' && canEdit) ? `<button class="btn btn-feedback" onclick="pedirSugestaoDesconto(${p.id_produto}, this)">Analisar desconto</button>` : '';
       return `<article class="entity-card">
         <h2>${escaparHtml(p.nome)}</h2>
         <dl class="entity-details">
@@ -290,7 +297,7 @@ function renderDashboard(title) {
   if (currentPage !== 'equipa') {
     return `<h1>${title} - ${escaparHtml(user.Cargo_Name)} ${escaparHtml(user.Name)}</h1>
       ${(currentPage === 'produtos') ? `<div class="toolbar product-filters">
-        <input id="filtroNome" placeholder="Nome" aria-label="Filtrar por nome">
+        <input id="filtroNome" placeholder="Nome (ex: feijao)" aria-label="Filtrar por nome">
         <input id="filtroCodigo" placeholder="Código" aria-label="Filtrar por código">
         <input id="filtroCategoria" placeholder="Categoria" aria-label="Filtrar por categoria">
         <input id="filtroFornecedor" placeholder="Fornecedor" aria-label="Filtrar por fornecedor">
@@ -752,6 +759,8 @@ async function renderConcorrenciaPlanilhas() {
 
   try {
     const comparacao = await api('/concorrentes/planilhas');
+    window.arquivosConcorrencia = comparacao.arquivos;
+    window.comparacaoConcorrencia = comparacao;
     if (comparacao.arquivos.length === 0) {
       main.innerHTML = `
         <h1>Monitoramento da Concorrência</h1>
@@ -762,14 +771,26 @@ async function renderConcorrenciaPlanilhas() {
 
     const formatarValor = (valor) =>
       new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
-    const cards = comparacao.produtos.map((produto) => `
+    const filtro = normalizarBusca(window.filtroConcorrencia);
+    const produtosFiltrados = comparacao.produtos.filter((produto) =>
+      !filtro || normalizarBusca(produto.nome_produto).includes(filtro)
+    );
+    const produtosOrdenados = produtosFiltrados.slice().sort((a, b) => {
+      const menorPreco = (produto) => Math.min(
+        ...Object.values(produto.precos).filter((preco) => preco !== null && preco !== undefined),
+      );
+      return (menorPreco(a) ?? Infinity) - (menorPreco(b) ?? Infinity);
+    });
+    const cards = produtosOrdenados.map((produto) => `
       <article class="entity-card">
         <h2>${escaparHtml(produto.nome_produto)}</h2>
         <dl class="entity-details">
-          ${comparacao.arquivos.map((arquivo) => {
-            const precos = produto.precos[arquivo] || [];
+          ${comparacao.arquivos.map((arquivo) => ({
+            arquivo,
+            preco: produto.precos[arquivo],
+          })).sort((a, b) => (a.preco ?? Infinity) - (b.preco ?? Infinity)).map(({ arquivo, preco }) => {
             const nome = arquivo.replace(/\.(xlsx|xlsm)$/i, '');
-            return `<div><dt>${escaparHtml(nome)}</dt><dd>${precos.length ? precos.map(formatarValor).join(', ') : 'Sem preço registrado'}</dd></div>`;
+            return `<div><dt>${escaparHtml(nome)}</dt><dd>${preco === null || preco === undefined ? 'Sem preço registrado' : formatarValor(preco)}</dd></div>`;
           }).join('')}
           <div><dt>Diferença de preços</dt><dd>${produto.diferenca === null ? '—' : formatarValor(produto.diferenca)}</dd></div>
         </dl>
@@ -778,11 +799,28 @@ async function renderConcorrenciaPlanilhas() {
 
     main.innerHTML = `
       <h1>Monitoramento da Concorrência</h1>
+      <p class="muted">${produtosOrdenados.length} produto(s) encontrado(s)</p>
+      <div class="toolbar product-filters">
+        <input id="filtroConcorrencia" value="${escaparHtml(window.filtroConcorrencia || '')}" placeholder="Buscar produto (ex: feijao)" aria-label="Buscar produto da concorrência" oninput="filtrarConcorrencia()">
+      </div>
       ${displayModeControl()}
+      ${(user.Cargo_ID === CARGO_GER || user.Cargo_ID === CARGO_DONO) ? '<div class="toolbar"><button class="btn btn-verde" onclick="abrirModalProdutoPlanilhaConcorrente()">Adicionar produto</button></div>' : ''}
       <section class="${collectionClass()} entity-grid">${cards || '<p class="muted">As planilhas não contêm produtos.</p>'}</section>
     `;
   } catch (error) {
     main.innerHTML = `<h1>Monitoramento da Concorrência</h1><div class="err">${escaparHtml(error.message)}</div>`;
+  }
+}
+
+async function filtrarConcorrencia() {
+  const campo = document.getElementById('filtroConcorrencia');
+  const posicao = campo?.selectionStart ?? 0;
+  window.filtroConcorrencia = campo?.value || '';
+  await renderConcorrenciaPlanilhas();
+  const novoCampo = document.getElementById('filtroConcorrencia');
+  if (novoCampo) {
+    novoCampo.focus();
+    novoCampo.setSelectionRange(posicao, posicao);
   }
 }
 

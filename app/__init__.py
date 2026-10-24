@@ -113,12 +113,20 @@ def create_app(test_config=None):
         from app.repositories.planilha_concorrente_repository import (
             PlanilhaConcorrenteRepository,
         )
+        from app.repositories.produto_planilha_repository import (
+            ProdutoPlanilhaRepository,
+        )
 
         arquivos, registros = PlanilhaConcorrenteRepository().sincronizar()
         flask_app.logger.info(
             "Planilhas de concorrência sincronizadas: %s arquivo(s), %s produto(s).",
             arquivos,
             registros,
+        )
+        produtos_importados = ProdutoPlanilhaRepository().sincronizar()
+        flask_app.logger.info(
+            "Catálogo de produtos sincronizado: %s produto(s) importado(s).",
+            produtos_importados,
         )
 
     @flask_app.errorhandler(HTTPException)

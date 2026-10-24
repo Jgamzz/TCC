@@ -163,6 +163,20 @@
   </div>
 </div>
 
+<!-- Modal: Adicionar produto nas planilhas de concorrentes -->
+<div class="modal-bg" id="produtoPlanilhaConcorrenteModalBg">
+  <div class="modal">
+    <h2>Adicionar produto à concorrência</h2>
+    <label>Nome do produto</label>
+    <input id="pc_nome_produto" type="text" maxlength="255" placeholder="Ex: Sabão em pó">
+    <div id="pc_precos"></div>
+    <div class="row">
+      <button class="btn btn-outline" onclick="fecharModalProdutoPlanilhaConcorrente()">Cancelar</button>
+      <button class="btn btn-verde" onclick="salvarProdutoPlanilhaConcorrente()">Salvar produto</button>
+    </div>
+  </div>
+</div>
+
 <!-- Modal: Registrar Feedback do Cliente -->
 <div class="modal-bg" id="feedbackModalBg">
   <div class="modal">

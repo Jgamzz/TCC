@@ -50,6 +50,20 @@ def listar_planilhas_concorrentes():
     return jsonify(planilhas_concorrentes.listar_comparacao())
 
 
+@operacao_bp.post("/concorrentes/planilhas")
+@verificar_permissao(["GERENTE", "ADMIN"])
+def adicionar_produto_planilha_concorrente():
+    """Adiciona ou atualiza um produto nas planilhas de concorrentes."""
+    dados = _json_object()
+    try:
+        planilhas_concorrentes.adicionar_produto(
+            dados.get("nome_produto"), dados.get("precos")
+        )
+    except ValueError as erro:
+        return jsonify({"erro": str(erro)}), 400
+    return jsonify(planilhas_concorrentes.listar_comparacao()), 201
+
+
 @operacao_bp.get("/configuracoes")
 @verificar_permissao(["ADMIN"])
 def obter_configuracoes():

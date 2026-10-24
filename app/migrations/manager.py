@@ -127,13 +127,18 @@ def _ensure_stock_user_column(connection: Any) -> None:
 
 
 def _apply_operations(
-    operations: Operations, operation_list: list[Any], existing_tables: set[str]
+    operations: Operations,
+    operation_list: list[Any],
+    existing_tables: set[str],
+    existing_indexes: dict[str, set[str]],
 ) -> None:
     """Aplica operações geradas, incluindo as agrupadas por tabela."""
     for operation in operation_list:
         nested_operations = getattr(operation, "ops", None)
         if nested_operations is not None:
-            _apply_operations(operations, nested_operations, existing_tables)
+            _apply_operations(
+                operations, nested_operations, existing_tables, existing_indexes
+            )
         elif (
             operation.__class__.__name__ == "CreateTableOp"
             and operation.table_name.lower() in existing_tables
@@ -141,8 +146,27 @@ def _apply_operations(
             # MySQL costuma retornar nomes em minúsculas, embora o ORM preserve
             # a capitalização de tabelas legadas como "Cargo" e "Usuario".
             continue
+        elif (
+            operation.__class__.__name__ == "CreateIndexOp"
+            and operation.index_name.lower()
+            in existing_indexes.get(operation.table_name.lower(), set())
+        ):
+            continue
         else:
             operations.invoke(operation)
+
+
+def _get_existing_indexes(connection: Any) -> dict[str, set[str]]:
+    """Obtém índices existentes para evitar criações duplicadas no MySQL."""
+    inspector = inspect(connection)
+    indexes: dict[str, set[str]] = {}
+    for table_name in inspector.get_table_names():
+        indexes[table_name.lower()] = {
+            index["name"].lower()
+            for index in inspector.get_indexes(table_name)
+            if index.get("name")
+        }
+    return indexes
 
 
 def _rename_roles(connection: Any) -> None:
@@ -265,8 +289,12 @@ def migrate_database(app: Any) -> None:
             existing_tables = {
                 table_name.lower() for table_name in inspect(connection).get_table_names()
             }
+            existing_indexes = _get_existing_indexes(connection)
             _apply_operations(
-                Operations(context), migration.upgrade_ops.ops, existing_tables
+                Operations(context),
+                migration.upgrade_ops.ops,
+                existing_tables,
+                existing_indexes,
             )
         _seed_default_roles(connection)
         _rename_roles(connection)

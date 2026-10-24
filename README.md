@@ -59,3 +59,10 @@ O endpoint autenticado `GET /api/giro` informa, para cada produto ativo, a quant
 A regra de validade aplica desconto quando a data do produto está entre hoje e antes do limite configurado (`dias_validade`); uma validade exatamente no limite não ativa essa regra, e produtos já vencidos não recebem desconto de validade. O aumento por giro alto só é aplicado quando existe preço de concorrente registrado e o preço atual está abaixo dele. Toda sugestão e aprovação respeita o piso `custo × (1 + margem_minima / 100)`.
 
 Os testes verificam os períodos de 7/30 dias, os limites da regra de validade, a condição de comparação com concorrentes e o processamento de sugestões para 500 produtos. O teste de desempenho automatizado usa SQLite em memória; ele não substitui a medição de desempenho no ambiente MySQL de produção.
+
+A formulação completa do motor, exemplos reproduzíveis, protocolo de comparação
+com margem fixa e correção proposta para RF04/RF10 estão em
+[`docs/metodologia_precificacao.md`](docs/metodologia_precificacao.md). O
+projeto não contém dados experimentais suficientes para afirmar ganhos de lucro
+ou redução de perdas; esses números só devem ser usados no artigo após uma
+avaliação controlada.
