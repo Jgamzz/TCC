@@ -16,8 +16,8 @@ class ProdutoAppService:
     def __init__(self, repository=None):
         self.repository = repository or ProdutoRepository()
 
-    def listar(self, filtros=None):
-        return self.repository.listar(filtros)
+    def listar(self, filtros=None, limit=100, offset=0):
+        return self.repository.listar(filtros, limit=limit, offset=offset)
 
     def buscar(self, id_produto):
         return self.repository.buscar_por_id(id_produto)
@@ -60,7 +60,7 @@ class ProdutoAppService:
         return produto
 
     def atualizar(self, id_produto, dados, usuario_id=None):
-        produto = self.buscar(id_produto)
+        produto = self.repository.buscar_com_bloqueio(id_produto)
         if not produto:
             return None
         if not isinstance(dados, dict):

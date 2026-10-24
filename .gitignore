@@ -4,3 +4,5 @@ __pycache__
 logs/
 backups/
 *.py[cod]
+.vscode
+.idea

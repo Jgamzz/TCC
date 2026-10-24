@@ -5,13 +5,37 @@ from app.services.usuario_service import verificar_permissao
 
 estoque_bp = Blueprint("estoque_bp", __name__)
 estoque_service = EstoqueAppService()
+_DEFAULT_PAGE_SIZE = 100
+_MAX_PAGE_SIZE = 1000
+
+
+def _pagination_params():
+    try:
+        limit = int(request.args.get("limit", _DEFAULT_PAGE_SIZE))
+        offset = int(request.args.get("offset", 0))
+    except (TypeError, ValueError):
+        raise ValueError("limit e offset devem ser números inteiros.")
+    if limit < 1 or limit > _MAX_PAGE_SIZE:
+        raise ValueError(f"limit deve estar entre 1 e {_MAX_PAGE_SIZE}.")
+    if offset < 0:
+        raise ValueError("offset não pode ser negativo.")
+    return limit, offset
 
 
 @estoque_bp.get("/")
 @verificar_permissao(["USUARIO", "GERENTE", "ADMIN"])
 def listar():
     """Lista as movimentações de estoque."""
-    return jsonify([movimento.to_dict() for movimento in estoque_service.listar()])
+    try:
+        limit, offset = _pagination_params()
+    except ValueError as erro:
+        return jsonify({"erro": str(erro)}), 400
+    return jsonify(
+        [
+            movimento.to_dict()
+            for movimento in estoque_service.listar(limit=limit, offset=offset)
+        ]
+    )
 
 
 @estoque_bp.get("/<int:id_estoque>")

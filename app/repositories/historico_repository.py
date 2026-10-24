@@ -20,7 +20,8 @@ class HistoricoRepository:
             data = data.replace(tzinfo=timezone.utc)
         return data.isoformat()
 
-    def listar(self):
+    def listar(self, limit=100, offset=0):
+        quantidade_necessaria = limit + offset
         eventos = []
         usuarios = {
             usuario.id: usuario.name
@@ -63,9 +64,10 @@ class HistoricoRepository:
             colunas_movimentacao.append(Estoque.usuario_id)
 
         movimentacoes = db.session.execute(
-            select(*colunas_movimentacao, Produto.nome).join(
-                Produto, Estoque.id_produto == Produto.id_produto
-            )
+            select(*colunas_movimentacao, Produto.nome)
+            .join(Produto, Estoque.id_produto == Produto.id_produto)
+            .order_by(Estoque.data_operacao.desc(), Estoque.id_estoque.desc())
+            .limit(quantidade_necessaria)
         ).all()
         for linha in movimentacoes:
             id_estoque, id_produto, operacao, quantidade, motivo, data_operacao = linha[:6]
@@ -89,6 +91,10 @@ class HistoricoRepository:
         feedbacks = db.session.execute(
             select(FeedbackCliente, Produto.nome)
             .join(Produto, FeedbackCliente.id_produto == Produto.id_produto)
+            .order_by(
+                FeedbackCliente.data_criacao.desc(), FeedbackCliente.id_feedback.desc()
+            )
+            .limit(quantidade_necessaria)
         ).all()
         for feedback, nome_produto in feedbacks:
             eventos.append(
@@ -109,6 +115,11 @@ class HistoricoRepository:
         alteracoes_preco = db.session.execute(
             select(HistoricoPreco, Produto.nome)
             .join(Produto, HistoricoPreco.id_produto == Produto.id_produto)
+            .order_by(
+                HistoricoPreco.data_alteracao.desc(),
+                HistoricoPreco.id_historico.desc(),
+            )
+            .limit(quantidade_necessaria)
         ).all()
         for alteracao, nome_produto in alteracoes_preco:
             eventos.append(
@@ -131,7 +142,9 @@ class HistoricoRepository:
             "FEEDBACK_REGISTRADO",
         }
         auditorias = db.session.execute(
-            select(Auditoria).order_by(Auditoria.data_criacao.desc())
+            select(Auditoria)
+            .order_by(Auditoria.data_criacao.desc(), Auditoria.id_auditoria.desc())
+            .limit(quantidade_necessaria)
         ).scalars()
         for auditoria in auditorias:
             if auditoria.acao in eventos_representados:
@@ -167,4 +180,6 @@ class HistoricoRepository:
                 }
             )
 
-        return sorted(eventos, key=lambda evento: evento["data"], reverse=True)
+        return sorted(eventos, key=lambda evento: evento["data"], reverse=True)[
+            offset : offset + limit
+        ]

@@ -7,7 +7,7 @@ class ProdutoRepository(BaseRepository[Produto]):
     def __init__(self):
         super().__init__(Produto)
 
-    def listar(self, filtros=None):
+    def listar(self, filtros=None, limit=100, offset=0):
         filtros = filtros or {}
         consulta = Produto.query.filter_by(ativo=True)
         for campo in ("nome", "codigo", "categoria", "fornecedor"):
@@ -19,7 +19,7 @@ class ProdutoRepository(BaseRepository[Produto]):
             consulta = consulta.filter(Produto.estoque > 0)
         elif disponivel == "false":
             consulta = consulta.filter(Produto.estoque <= 0)
-        return consulta.order_by(Produto.nome).all()
+        return consulta.order_by(Produto.nome).limit(limit).offset(offset).all()
 
     def buscar_por_id(self, entity_id):
         produto = super().buscar_por_id(entity_id)
