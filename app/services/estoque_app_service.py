@@ -18,8 +18,8 @@ class EstoqueAppService:
         self.produto_repository = produto_repository or ProdutoRepository()
         self.estoque_repository = estoque_repository or EstoqueRepository()
 
-    def listar(self):
-        return self.estoque_repository.listar()
+    def listar(self, limit=100, offset=0):
+        return self.estoque_repository.listar(limit=limit, offset=offset)
 
     def buscar(self, id_estoque):
         return self.estoque_repository.buscar_por_id(id_estoque)

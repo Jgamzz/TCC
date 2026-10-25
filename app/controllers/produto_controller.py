@@ -6,6 +6,21 @@ from app.services.usuario_service import verificar_permissao
 
 produto_bp = Blueprint("produto_bp", __name__)
 produto_service = ProdutoAppService()
+_DEFAULT_PAGE_SIZE = 100
+_MAX_PAGE_SIZE = 1000
+
+
+def _pagination_params():
+    try:
+        limit = int(request.args.get("limit", _DEFAULT_PAGE_SIZE))
+        offset = int(request.args.get("offset", 0))
+    except (TypeError, ValueError):
+        raise ValueError("limit e offset devem ser números inteiros.")
+    if limit < 1 or limit > _MAX_PAGE_SIZE:
+        raise ValueError(f"limit deve estar entre 1 e {_MAX_PAGE_SIZE}.")
+    if offset < 0:
+        raise ValueError("offset não pode ser negativo.")
+    return limit, offset
 
 
 @produto_bp.get("/")
@@ -27,10 +42,14 @@ def listar():
         for campo in ("nome", "codigo", "categoria", "fornecedor")
     }
     filtros["disponivel"] = request.args.get("disponivel")
+    try:
+        limit, offset = _pagination_params()
+    except ValueError as erro:
+        return jsonify({"erro": str(erro)}), 400
     return jsonify(
         [
             ProdutoResponseDto.from_model(produto).to_dict()
-            for produto in produto_service.listar(filtros)
+            for produto in produto_service.listar(filtros, limit=limit, offset=offset)
         ]
     )
 

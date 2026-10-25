@@ -7636,3 +7636,8 @@ FROM `Estoque` INNER JOIN produto ON `Estoque`.id_produto = produto.id_produto]
 2026-10-16 19:50:16 | INFO | werkzeug | 127.0.0.1 - - [16/Oct/2026 19:50:16] "GET /api/produtos/ HTTP/1.1" 200 -
 2026-10-16 19:50:16 | INFO | werkzeug | 127.0.0.1 - - [16/Oct/2026 19:50:16] "GET /api/produtos/ HTTP/1.1" 200 -
 2026-10-16 19:50:16 | INFO | werkzeug | 127.0.0.1 - - [16/Oct/2026 19:50:16] "GET /api/produtos/ HTTP/1.1" 200 -
+2026-10-24 12:51:39 | INFO | app | Planilhas de concorrência sincronizadas: 3 arquivo(s), 300 produto(s).
+2026-10-24 12:51:41 | INFO | app | Catálogo de produtos sincronizado: 0 produto(s) importado(s).
+2026-10-24 12:51:45 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-10-24 12:51:45 | INFO | werkzeug | [33mPress CTRL+C to quit[0m

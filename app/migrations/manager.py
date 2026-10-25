@@ -152,6 +152,11 @@ def _apply_operations(
             in existing_indexes.get(operation.table_name.lower(), set())
         ):
             continue
+        elif (
+            operation.__class__.__name__ == "CreateForeignKeyOp"
+            and operation.source_table.lower() in existing_tables
+        ):
+            continue
         else:
             operations.invoke(operation)
 

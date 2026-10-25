@@ -22,6 +22,8 @@ estoque_service = EstoqueAppService()
 preco_service = PrecificacaoAppService()
 planilhas_concorrentes = PlanilhaConcorrenteRepository()
 historico_repository = HistoricoRepository()
+_DEFAULT_PAGE_SIZE = 100
+_MAX_PAGE_SIZE = 1000
 
 
 def _json_object():
@@ -29,11 +31,28 @@ def _json_object():
     return dados if isinstance(dados, dict) else {}
 
 
+def _pagination_params():
+    try:
+        limit = int(request.args.get("limit", _DEFAULT_PAGE_SIZE))
+        offset = int(request.args.get("offset", 0))
+    except (TypeError, ValueError):
+        raise ValueError("limit e offset devem ser números inteiros.")
+    if limit < 1 or limit > _MAX_PAGE_SIZE:
+        raise ValueError(f"limit deve estar entre 1 e {_MAX_PAGE_SIZE}.")
+    if offset < 0:
+        raise ValueError("offset não pode ser negativo.")
+    return limit, offset
+
+
 @operacao_bp.get("/historico")
 @verificar_permissao(["GERENTE", "ADMIN"])
 def listar_historico():
     """Retorna feedbacks, movimentações de estoque e alterações de preço."""
-    return jsonify(historico_repository.listar())
+    try:
+        limit, offset = _pagination_params()
+    except ValueError as erro:
+        return jsonify({"erro": str(erro)}), 400
+    return jsonify(historico_repository.listar(limit=limit, offset=offset))
 
 
 @operacao_bp.get("/giro")
