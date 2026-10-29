@@ -66,3 +66,28 @@ com margem fixa e correção proposta para RF04/RF10 estão em
 projeto não contém dados experimentais suficientes para afirmar ganhos de lucro
 ou redução de perdas; esses números só devem ser usados no artigo após uma
 avaliação controlada.
+
+## Reprodução do simulador
+
+O simulador de Monte Carlo está em
+[`scripts/simulador2.py`](scripts/simulador2.py). Ele usa um catálogo sintético
+de 12 produtos declarado no próprio arquivo, que constitui a base de entrada
+reproduzível da análise. O catálogo contém custos, preços, estoques, validades,
+limiares de giro, margens mínimas, janelas de validade e preços concorrentes.
+
+Para executar:
+
+```powershell
+py -m pip install -r requirements.txt
+py .\scripts\simulador2.py
+```
+
+A simulação principal usa `semente=42`, 100 repetições e 30 dias. A análise de
+sensibilidade reutiliza a mesma semente para as elasticidades `0.5` e `3.0`.
+Esses parâmetros estão visíveis na chamada
+`simular_monte_carlo(elasticidade=1.5)` e na definição do catálogo, permitindo
+reproduzir os resultados sem dados externos.
+
+Para a citação acadêmica, use a versão imutável publicada na tag
+[`v1.0.0`](https://github.com/Jgamzz/TCC/tree/v1.0.0), e não uma branch em
+desenvolvimento.

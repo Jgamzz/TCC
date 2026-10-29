@@ -6,3 +6,6 @@ PyMySQL
 Flask-JWT-Extended
 Werkzeug
 openpyxl
+numpy
+pandas
+scipy
