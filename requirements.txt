@@ -1,0 +1,11 @@
+Flask
+Flask-SQLAlchemy
+alembic
+flasgger
+PyMySQL
+Flask-JWT-Extended
+Werkzeug
+openpyxl
+numpy
+pandas
+scipy

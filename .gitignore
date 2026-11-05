@@ -1,0 +1,8 @@
+__pycache__
+.venv/
+.env
+logs/
+backups/
+*.py[cod]
+.vscode
+.idea

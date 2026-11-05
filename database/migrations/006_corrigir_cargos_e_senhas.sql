@@ -1,0 +1,2 @@
+-- The application migration manager normalizes role names and hashes legacy
+-- passwords at startup. This file intentionally does not reset user passwords.

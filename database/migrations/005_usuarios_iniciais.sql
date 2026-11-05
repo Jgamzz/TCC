@@ -1,0 +1,3 @@
+-- Initial users are provisioned securely by app.migrations.manager from
+-- INITIAL_ADMIN_USERNAME, INITIAL_ADMIN_PASSWORD and INITIAL_ADMIN_NAME.
+-- Never add fixed user passwords to SQL migration files.

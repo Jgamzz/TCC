@@ -1,0 +1,5 @@
+from app.repositories.base_repository import BaseRepository
+from app.repositories.produto_repository import ProdutoRepository
+from app.repositories.venda_repository import VendaRepository
+from app.repositories.preco_concorrente_repository import PrecoConcorrenteRepository
+from app.repositories.sugestao_preco_repository import SugestaoPrecoRepository

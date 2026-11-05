@@ -1,0 +1,29 @@
+=== APÊNDICE: PARÂMETROS DOS 12 PRODUTOS ===
+ id  custo  preco_base  estoque  validade_dias  L  M  V    C
+    1   10.0        14.0      100             15 15 15  7 13.5
+  2   25.0        35.0       50             20 10 15  7 34.0
+  3    5.0         8.0      150             10 20 10  5  7.5
+  4   18.0        25.0       80             25 12 20  7 24.0
+  5   12.0        17.5       90             12 15 15  5 16.0
+  6   40.0        58.0       40             30  5 25 10 55.0
+  7    8.0        11.5      120             18 18 15  5 11.0
+  8   22.0        31.0       60             14 10 20  5 30.0
+  9   15.0        21.0      100             22 15 15  7 20.5
+ 10   30.0        42.0       45             28  8 20  7 40.0
+ 11    7.0        10.0      130             16 20 10  5  9.5
+ 12   50.0        72.0       30             40  5 25 10 70.0
+
+==================================================
+
+=== RESULTADOS PRINCIPAIS (Tabela 1) - Elasticidade = 1.5 ===
+Cenário A (Controle) : Média = R$ -568.28 | Std = R$ 326.23
+Cenário B (Progressivo): Média = R$ -1153.65 | Std = R$ 317.16
+Cenário C (Motor SGPV) : Média = R$ -1358.29 | Std = R$ 309.05
+
+=== ESTATÍSTICA ===
+Ganho Médio (C - B): R$ -204.64
+Intervalo de Confiança 95% do Ganho: (R$ -213.78, R$ -195.50)
+
+=== ANÁLISE DE SENSIBILIDADE (Elasticidade Variável) ===
+Elasticidade 0.5 -> Cenário A: R$ -568.28 | Cenário B: R$ -1435.78 | Cenário C: R$ -1367.55
+Elasticidade 3.0 -> Cenário A: R$ -568.28 | Cenário B: R$ -393.58 | Cenário C: R$ -1080.66
