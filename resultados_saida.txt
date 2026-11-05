@@ -1,6 +1,6 @@
 === APÊNDICE: PARÂMETROS DOS 12 PRODUTOS ===
  id  custo  preco_base  estoque  validade_dias  L  M  V    C
-    1   10.0        14.0      100             15 15 15  7 13.5
+  1   10.0        14.0      100             15 15 15  7 13.5
   2   25.0        35.0       50             20 10 15  7 34.0
   3    5.0         8.0      150             10 20 10  5  7.5
   4   18.0        25.0       80             25 12 20  7 24.0
@@ -13,17 +13,64 @@
  11    7.0        10.0      130             16 20 10  5  9.5
  12   50.0        72.0       30             40  5 25 10 70.0
 
-==================================================
+Semente: 42 | Repetições: 100 | Dias: 30
 
-=== RESULTADOS PRINCIPAIS (Tabela 1) - Elasticidade = 1.5 ===
-Cenário A (Controle) : Média = R$ -568.28 | Std = R$ 326.23
+=== TABELA 1: RESULTADOS (Elasticidade = 1.5) ===
+Cenário A (Controle): Média = R$ -568.28 | Std = R$ 326.23
 Cenário B (Progressivo): Média = R$ -1153.65 | Std = R$ 317.16
-Cenário C (Motor SGPV) : Média = R$ -1358.29 | Std = R$ 309.05
+Cenário C (Motor SGPV): Média = R$ -1358.29 | Std = R$ 309.05
 
-=== ESTATÍSTICA ===
-Ganho Médio (C - B): R$ -204.64
-Intervalo de Confiança 95% do Ganho: (R$ -213.78, R$ -195.50)
+=== TABELA 2: INTERVALOS PAREADOS (IC 95%) ===
+Elasticidade | A - B (média; IC) | A - C (média; IC)
+        0.5 | R$ 867.50 [855.55; 879.45] | R$ 799.27 [794.69; 803.86]
+        1.5 | R$ 585.37 [575.52; 595.22] | R$ 790.01 [785.07; 794.95]
+        3.0 | R$ -174.70 [-193.06; -156.33] | R$ 512.38 [502.05; 522.71]
 
-=== ANÁLISE DE SENSIBILIDADE (Elasticidade Variável) ===
-Elasticidade 0.5 -> Cenário A: R$ -568.28 | Cenário B: R$ -1435.78 | Cenário C: R$ -1367.55
-Elasticidade 3.0 -> Cenário A: R$ -568.28 | Cenário B: R$ -393.58 | Cenário C: R$ -1080.66
+=== TABELA 3: ABLAÇÃO DO CENÁRIO C (Elasticidade = 1.5) ===
+Configuração | Média C | Variação contra C completo
+completo     | R$ -1358.29 | R$ 0,00
+sem R1       | R$ -1314.71 | R$ 43.58
+sem R2       | R$ -1358.29 | R$ 0.00
+sem R3       | R$ -1175.61 | R$ 182.68
+sem R4       | R$ -1052.86 | R$ 305.43
+sem R5       | R$ -1358.29 | R$ 0.00
+
+=== TABELA 4: PERDAS POR VALIDADE (Elasticidade = 1.5) ===
+Cenário | Unidades vencidas | Custo vencido
+A       |            497.67 | R$ 4739.86
+B       |            476.04 | R$ 4468.20
+C       |            496.92 | R$ 4732.72
+
+=== TABELA 5: MÉTRICAS OPERACIONAIS (Elasticidade = 1.5) ===
+ Cenário | Vendidas | Vencidas | Estoque final | Custo estoque final | Rupturas
+A        |   497.33 |   497.67 |          0.00 | R$              0.00 |    38.14
+B        |   518.96 |   476.04 |          0.00 | R$              0.00 |    38.31
+C        |   498.08 |   496.92 |          0.00 | R$              0.00 |    38.14
+
+=== TABELA 6: DISPAROS DAS REGRAS NO CENÁRIO C ===
+R1: 65.32 disparos médios por repetição
+R2: 0.00 disparos médios por repetição
+R3: 82.00 disparos médios por repetição
+R4: 109.80 disparos médios por repetição
+R5: 0.00 disparos médios por repetição
+
+=== TABELA 7: SENSIBILIDADES DO CENÁRIO C ===
+Variação       | Parâmetro | Média C
+estoque x0.5   | 0.5       | R$ 1378.51
+estoque x1.0   | 1.0       | R$ -1358.29
+estoque x1.5   | 1.5       | R$ -5690.65
+demanda μ=2    | 2.0       | R$ -4078.54
+demanda μ=3    | 3.0       | R$ -1358.29
+demanda μ=4    | 4.0       | R$ 775.67
+janela V x0.5  | 0.5       | R$ -1278.81
+janela V x1.0  | 1.0       | R$ -1358.29
+janela V x1.5  | 1.5       | R$ -1455.54
+margem M=10%   | 10.0      | R$ -1358.29
+margem M=20%   | 20.0      | R$ -1358.26
+margem M=30%   | 30.0      | R$ -1292.58
+margem M=40%   | 40.0      | R$ -1333.56
+
+=== TABELA 8: DEMANDA COM E SEM TRUNCAMENTO (Elasticidade = 1.5) ===
+Demanda | Cenário A | Cenário B | Cenário C
+truncada | R$ -568.28 | R$ -1153.65 | R$ -1358.29
+contínua | R$ -568.28 | R$ -553.96 | R$ -742.65
